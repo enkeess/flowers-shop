@@ -5,6 +5,7 @@ import {ReactComponent as FacebookIcon} from './facebook-icon.svg';
 import {ReactComponent as HeartIcon} from './heart-icon.svg';
 import {ReactComponent as HeartSmallIcon} from './heart-small-icon.svg';
 import {ReactComponent as UserIcon} from './user-icon.svg';
+import {ReactComponent as StarIcon} from './star-icon.svg';
 import {ReactComponent as SearchIcon} from './search-icon.svg';
 import {ReactComponent as DeliveryIcon} from './delivery-icon.svg';
 import {ReactComponent as ContactsIcon} from './contacts-icon.svg';
@@ -21,5 +22,6 @@ export {
 	ContactsIcon,
 	BusketIcon,
 	UserIcon,
-	SearchIcon
+	SearchIcon,
+	StarIcon
 };

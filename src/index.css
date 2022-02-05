@@ -11,6 +11,10 @@
 	font-style: normal;
 }
 
+/* body {
+	background: var(--background);
+} */
+
 button {
 	font-family: var(--euclid-circular-b);
 }
