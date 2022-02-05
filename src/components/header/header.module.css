@@ -37,6 +37,8 @@
 	grid-area: auth;
 	display: flex;
 	gap: 10px;
+	justify-content: flex-end;
+	align-items: center;
 	font-size: 16px;
 	line-height: 18px;
 	color: var(--white);
@@ -45,7 +47,6 @@
 
 .nav {
 	display: grid;
-
 	width: 1420px;
 	margin: 15px auto;
 	grid-template-columns: 120px auto 825px auto 175px;
@@ -58,6 +59,9 @@
 
 .logo {
 	grid-area: logo;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .find {
@@ -103,6 +107,7 @@
 .search,
 .filter {
 	position: relative;
+	height: 20px;
 }
 
 .search::after,
@@ -151,31 +156,13 @@
 	grid-area: icons;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 	gap: 13px;
 
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 10px;
 	color:var(--primary);
-}
-
-@media (max-width: 1439px) {
-	.upline__container,
-	.nav {
-		width: calc(100vw - 40px);
-	}
-
-
-}
-
-@media (max-width: 1199px) {
-	.route {
-		gap: 50px;
-	}
-	.nav {
-		grid-template-columns: 100px auto 620px auto 175px;
-	}
 }
 
 
@@ -187,3 +174,96 @@
 	line-height: 18px;
 	outline: none;
 }
+
+@media (max-width: 1440px) {
+	.upline__container,
+	.nav {
+		width: calc(100vw - 40px);
+	}
+
+	.logo svg {
+		width: 100px;
+		height: auto;
+	}
+	.block {
+		gap: 40px;
+	}
+
+}
+
+@media (max-width: 1199px) {
+	.header {
+		grid-template-rows: 50px 1fr;
+	}
+	.route {
+		gap: 0;
+		justify-content: space-between;
+	}
+	.nav {
+		grid-template-columns: 100px auto 620px auto 175px;
+	}
+
+	.block {
+		gap: 15px;
+	}
+
+	.logo svg {
+		width: 90px;
+		height: auto;
+	}
+}
+
+@media (max-width: 1024px) {
+
+	.upline__container,
+	.nav {
+		width: calc(100vw - 20px);
+	}
+	.block__item,
+	.auth,
+	.select
+	{
+		font-size: 12px;
+	}
+
+	.block__item {
+		gap: 5px;
+	}
+
+	.block__item svg,
+	.auth svg 
+	{
+		height: 15px;
+		width: auto;
+	}
+
+
+
+	.nav {
+		grid-template-columns: 80px minmax(10px, auto) minmax(500px, 620px) minmax(10px, auto) 145px;
+	}
+	.upline__container {
+		grid-template-columns: 1fr 145px;
+	}
+	.socials {
+		gap: 8px;
+	}
+	.number {
+		font-size: 14px;
+	}
+	.icons svg {
+		height: 18px;
+		width: auto;
+	}
+	.route {
+		font-size: 13px;
+	}
+	.find {
+		font-size: 12px;
+	}
+	.filter {
+		width: 200px;
+	}
+}
+
+

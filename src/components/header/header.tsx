@@ -65,12 +65,12 @@ export const Header = ({className}:HeaderProps) => {
 				<div >
 					<div className={styles.nav}>
 						<div className={styles.logo}>
-						<Logo/>
+							<Logo/>
 						</div>
 						<div className={styles.find}>
 							
 							<div className={styles.filter}>
-								поиск по категориям	
+								Поиск по категориям	
 							</div>
 							
 							<div className={styles.search}>
