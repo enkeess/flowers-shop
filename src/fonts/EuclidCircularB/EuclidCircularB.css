@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "Euclid Circular B";
+	src: url("EuclidCircularB-Regular.eot");
+	src:
+		local("Euclid Circular B Regular"),
+		local("EuclidCircularB-Regular"),
+		url("EuclidCircularB-Regular.eot?#iefix") format("embedded-opentype"),
+		url("EuclidCircularB-Regular.woff2") format("woff2"),
+		url("EuclidCircularB-Regular.woff") format("woff"),
+		url("EuclidCircularB-Regular.ttf") format("truetype");
+
+	font-weight: normal;
+	font-style: normal;
+}

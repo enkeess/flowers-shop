@@ -1,0 +1,16 @@
+:root {
+	--museo-sans: "Museo Sans Cyrl";
+	--euclid-circular-b: "Euclid Circular B";
+	--primary: #956D84;
+	--white: #FFF;
+	--gray: #828282;
+	--dark-gray: #333;
+	--background: #E5E5E5;
+	--container-width: 1420px;
+}
+
+@media (max-width: 1440px) {
+	:root {
+		--container-width: 1200px;
+	}
+}
