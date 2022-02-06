@@ -1,18 +1,32 @@
 import styles from './card.module.css';
 import src from'./img.png';
-import { StarIcon } from '../../icons';
+import { StarIcon, HeartSmallIcon, HeartFillIcon } from '../../icons';
+import { useState } from 'react';
 
 export const Card = ():JSX.Element => {
-	
+	const id = 2545342;
 	const alt = "alt";
-	const name = "101 красная роза";
+	const text = "101 красная роза";
 	const currency = "Руб";
 	const oldPrice = 8900;
-	const curPrice = 8900;
+	const price = 8900;
+	const sale = 19;
+	const isTop = true;
+	const [like, setLike] = useState<boolean>(false);
+	
 	return(
-		<div className={styles.card}>
+		<div key={id} className={styles.card}>
+			
 			<div className={styles.img__container}>
-				<img src={src} alt={alt} className={styles.img}/>
+				
+
+			<img src={src} alt={alt} className={styles.img}/>
+			{sale && <div className={styles.card__sale}> -{sale}%</div>}
+			{isTop && <div className={styles.card__top}>TOP</div> }
+			<div className={styles.card__like} onClick={() => setLike(!like)}> 
+				{like ? <HeartFillIcon/> : <HeartSmallIcon/> }
+			</div>
+				
 			</div>
 			
 				<div className={styles.card__rating}>
@@ -25,14 +39,14 @@ export const Card = ():JSX.Element => {
 				</div>
 			<div className={styles.card__info}>
 				<div className={styles.card__name}>
-					{name}
+					{text}
 				</div>
 				<div className={styles.card__prices}>
 					<div className={styles.card__oldPrice}>
 						{oldPrice} {currency}
 					</div>
 					<div className={styles.card__curPrice}>
-						{curPrice} {currency}
+						{price} {currency}
 					</div>
 				</div>
 			</div>

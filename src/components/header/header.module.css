@@ -6,7 +6,7 @@
 .upline__container {
 	display: grid;
 
-	width: 1420px;
+	width: var(--container-width);
 	margin: 15px auto;
 	grid-template-columns: 1fr 175px;
 	grid-template-areas: "block auth";
@@ -47,7 +47,7 @@
 
 .nav {
 	display: grid;
-	width: 1420px;
+	width: var(--container-width);
 	margin: 15px auto;
 	grid-template-columns: 120px auto 825px auto 175px;
 	grid-template-rows: 2fr 1fr;
@@ -176,10 +176,10 @@
 }
 
 @media (max-width: 1440px) {
-	.upline__container,
+	/* .upline__container,
 	.nav {
 		width: calc(100vw - 40px);
-	}
+	} */
 
 	.logo svg {
 		width: 100px;
@@ -215,10 +215,6 @@
 
 @media (max-width: 1024px) {
 
-	.upline__container,
-	.nav {
-		width: calc(100vw - 20px);
-	}
 	.block__item,
 	.auth,
 	.select
@@ -236,7 +232,6 @@
 		height: 15px;
 		width: auto;
 	}
-
 
 
 	.nav {

@@ -3,6 +3,7 @@ import {ReactComponent as TelegramIcon} from './telegram-icon.svg';
 import {ReactComponent as ViberIcon} from './viber-icon.svg';
 import {ReactComponent as FacebookIcon} from './facebook-icon.svg';
 import {ReactComponent as HeartIcon} from './heart-icon.svg';
+import {ReactComponent as HeartFillIcon} from './heart-fill-icon.svg';
 import {ReactComponent as HeartSmallIcon} from './heart-small-icon.svg';
 import {ReactComponent as UserIcon} from './user-icon.svg';
 import {ReactComponent as StarIcon} from './star-icon.svg';
@@ -17,6 +18,7 @@ export {
 	ViberIcon,
 	FacebookIcon,
 	HeartIcon,
+	HeartFillIcon,
 	HeartSmallIcon,
 	DeliveryIcon,
 	ContactsIcon,
