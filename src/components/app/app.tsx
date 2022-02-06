@@ -8,6 +8,7 @@ export  const App = () => {
     <div className="app">
 		Приложение
 		<Carousel/>
+		
     </div>
   );
 };

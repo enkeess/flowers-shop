@@ -1,6 +1,6 @@
 import styles from './card.module.css';
 import src from'./img.png';
-import { StarIcon, HeartSmallIcon, HeartFillIcon } from '../../icons';
+import { StarIcon, HeartSmallIcon, HeartFillIcon, BusketIcon } from '../../icons';
 import { useState } from 'react';
 
 export const Card = ():JSX.Element => {
@@ -52,7 +52,8 @@ export const Card = ():JSX.Element => {
 			</div>
 			<div className={styles.card__btns}>
 				<button className={styles.btn}>
-					Заказать
+					<span>Заказать</span>
+					<BusketIcon/>
 				</button>
 
 				<button className={styles.fast}>

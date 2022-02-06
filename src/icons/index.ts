@@ -11,6 +11,8 @@ import {ReactComponent as SearchIcon} from './search-icon.svg';
 import {ReactComponent as DeliveryIcon} from './delivery-icon.svg';
 import {ReactComponent as ContactsIcon} from './contacts-icon.svg';
 import {ReactComponent as BusketIcon} from './busket-icon.svg';
+import {ReactComponent as ArrowLeftIcon} from './arrow-left-icon.svg';
+import {ReactComponent as ArrowRightIcon} from './arrow-right-icon.svg';
 
 export {
 	InstagramIcon,
@@ -25,5 +27,7 @@ export {
 	BusketIcon,
 	UserIcon,
 	SearchIcon,
-	StarIcon
+	StarIcon,
+	ArrowLeftIcon,
+	ArrowRightIcon
 };

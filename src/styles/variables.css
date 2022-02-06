@@ -2,17 +2,17 @@
 	--museo-sans: "Museo Sans Cyrl";
 	--euclid-circular-b: "Euclid Circular B";
 	--primary: #956D84;
-	--primary-hover: rgb(160, 85, 126);
-	--primary-click: rgb(231, 121, 183);
-	--white: #FFFfff;
-	--black: #000000;
+	--primary-hover: rgb(160 85 126);
+	--primary-click: rgb(231 121 183);
+	--white: #FFF;
+	--black: #000;
 	--gray: #828282;
 	--dark-gray: #333;
 	--background: #E5E5E5;
 	--container-width: 1420px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1420px) {
 	:root {
 		--container-width: calc(100vw - 40px);
 	}
