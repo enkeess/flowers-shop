@@ -1,4 +1,4 @@
-import styles from './card.module.css';
+import './card.scss';
 import src from'./img.png';
 import { StarIcon, HeartSmallIcon, HeartFillIcon, BusketIcon } from '../../icons';
 import { useState } from 'react';
@@ -9,20 +9,20 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 	const [like, setLike] = useState<boolean>(false);
 	
 	return(
-		<div key={id} className={styles.card}>
+		<div key={id} className={"card"}>
 			
-			<div className={styles.img__container}>
+			<div className={"img__container"}>
 				
-			<img src={src} alt={text} className={styles.img}/>
-			{sale && <div className={styles.card__sale}> -{sale}%</div>}
-			{isTop && <div className={styles.card__top}>TOP</div> }
-			<div className={styles.card__like} onClick={() => setLike(!like)}> 
+			<img src={src} alt={text} className={"img"}/>
+			{sale && <div className={"card__sale"}> -{sale}%</div>}
+			{isTop && <div className={"card__top"}>TOP</div> }
+			<div className={"card__like"} onClick={() => setLike(!like)}> 
 				{like ? <HeartFillIcon/> : <HeartSmallIcon/> }
 			</div>
 				
 			</div>
 			
-				<div className={styles.card__rating}>
+				<div className={"card__rating"}>
 					<StarIcon/>
 					<StarIcon/>
 					<StarIcon/>
@@ -30,26 +30,26 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 					<StarIcon/>
 
 				</div>
-			<div className={styles.card__info}>
-				<div className={styles.card__name}>
+			<div className={"card__info"}>
+				<div className={"card__name"}>
 					{text}
 				</div>
-				<div className={styles.card__prices}>
-					<div className={styles.card__oldPrice}>
+				<div className={"card__prices"}>
+					<div className={"card__oldPrice"}>
 						{oldPrice} {currency}
 					</div>
-					<div className={styles.card__curPrice}>
+					<div className={"card__curPrice"}>
 						{price} {currency}
 					</div>
 				</div>
 			</div>
-			<div className={styles.card__btns}>
-				<button className={styles.btn}>
+			<div className={"card__btns"}>
+				<button className={"btn"}>
 					<span>Заказать</span>
 					<BusketIcon/>
 				</button>
 
-				<button className={styles.fast}>
+				<button className={"fast"}>
 					<span>Быстрый заказ</span>
 				</button>
 			</div>

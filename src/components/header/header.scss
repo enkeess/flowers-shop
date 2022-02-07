@@ -1,0 +1,277 @@
+.header {
+  display: grid;
+  grid-template-rows: 50px 150px;
+  &__upline {
+    background: var(--dark-gray);
+    &-container {
+      display: grid;
+
+      width: var(--container-width);
+      margin: 15px auto;
+      grid-template-columns: 1fr 175px;
+      grid-template-areas: "block auth";
+    }
+  }
+
+  &__block {
+    grid-area: block;
+
+    display: flex;
+    gap: 63px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--white);
+
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 18px;
+      gap: 13px;
+    }
+  }
+  &__auth {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    color: var(--white);
+
+    font-size: 16px;
+    line-height: 18px;
+    grid-area: auth;
+    gap: 10px;
+  }
+  &__nav {
+    display: grid;
+
+    width: var(--container-width);
+    margin: 15px auto;
+    grid-template-columns: 120px auto 825px auto 175px;
+    grid-template-rows: 2fr 1fr;
+
+    grid-template-areas:
+      "logo  . find . contacts"
+      "logo . route .  icons";
+  }
+
+  &__logo {
+    grid-area: logo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__find {
+    display: flex;
+    align-items: center;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    font-weight: 300;
+    line-height: 18px;
+    grid-area: find;
+    gap: 20px;
+  }
+
+  &__contacts {
+    grid-area: contacts;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  &__search {
+    display: grid;
+    width: 100%;
+    padding-right: 15px;
+    grid-template-columns: 1fr 20px;
+    gap: 13px;
+
+    input {
+      border: none;
+      outline: none;
+      background: none;
+    }
+  }
+
+  &__filter {
+    width: 220px;
+  }
+
+  &__search,
+  &__filter {
+    position: relative;
+
+    height: 20px;
+  }
+
+  &__search::after,
+  &__filter::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    content: "";
+
+    background: var(--gray);
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26.92px;
+    height: 26.92px;
+
+    border-radius: 50%;
+    background: var(--primary);
+  }
+
+  &__socials,
+  &__number,
+  &__icons {
+    gap: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__route {
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    grid-area: route;
+    gap: 70px;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    color: var(--primary);
+
+    font-size: 16px;
+
+    font-weight: 300;
+    line-height: 10px;
+    grid-area: icons;
+    gap: 13px;
+  }
+
+  &__select {
+    color: rgb(255 255 255 / 30%);
+    border: none;
+    outline: none;
+    background: none;
+
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .header {
+    &__logo svg {
+      width: 100px;
+      height: auto;
+    }
+
+    &__block {
+      gap: 40px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    grid-template-rows: 50px 1fr;
+
+    &__route {
+      gap: 0;
+
+      justify-content: space-between;
+    }
+
+    &__nav {
+      grid-template-columns: 100px auto 620px auto 175px;
+    }
+
+    &__block {
+      gap: 15px;
+    }
+
+    &__logo svg {
+      width: 90px;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &__block-item,
+    &__auth,
+    &__select {
+      font-size: 12px;
+    }
+
+    &__block-item {
+      gap: 5px;
+    }
+
+    &__block-item svg,
+    &__auth svg {
+      width: auto;
+      height: 15px;
+    }
+
+    &__nav {
+      grid-template-columns:
+        80px minmax(10px, auto) minmax(500px, 620px) minmax(10px, auto)
+        145px;
+    }
+
+    &__upline-container {
+      grid-template-columns: 1fr 145px;
+    }
+
+    &__socials {
+      gap: 8px;
+    }
+
+    &__number {
+      font-size: 14px;
+    }
+
+    &__icons svg {
+      width: auto;
+      height: 18px;
+    }
+
+    &__route {
+      font-size: 13px;
+    }
+
+    &__find {
+      font-size: 12px;
+    }
+
+    &__filter {
+      width: 200px;
+    }
+  }
+}

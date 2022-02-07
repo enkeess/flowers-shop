@@ -1,57 +1,49 @@
-// import { Navbar } from '../navbar/navbar';
-import { HeaderProps } from './header.props';
-import cn from 'classnames';
-import styles from './header.module.css';
-import {ReactComponent as Logo} from './logo.svg';
+import './header.scss';
 import * as Icons from "../../icons";
 
-export const Header = ({className}:HeaderProps) => {
+export const Header = () => {
 	return(
-		<header className={cn(className, styles.header)}>
-			
-
-			
-				<div className={styles.upline}>
-					<div className={styles.upline__container}>
-						<div className={styles.block}>
-							<div className={styles.block__item}> 
+		<header className={'header'}>
+				<div className={'header__upline'}>
+					<div className={'header__upline-container'}>
+						<div className={'header__block'}>
+							<div className={'header__block-item'}> 
 								Валюта
-
-								<select className={styles.select} >            
+								<select className={'header__select'} >            
 									<option value="rub">Руб</option>
 									<option value="usd">Usd</option>
 								</select>	
 							</div>
-							<div className={styles.block__item}>
+							<div className={'header__block-item'}>
 								Язык 
-								<select className={styles.select} >            
+								<select className={'header__select'} >            
 									<option value="rus">Русский</option>
 									<option value="en">English</option>
 								</select>	
 							</div>
-							<div className={styles.block__item}> 
+							<div className={'header__block-item'}>
 								Город 
-								<select className={styles.select} >            
+								<select className={'header__select'} >            
 									<option value="москва">Москва</option>
 									<option value="new-york">New-York</option>
 								</select>	
 							</div>
 							
-							<a href="#" className={styles.block__item}>
+							<a className={'header__block-item'}>
 								<Icons.HeartSmallIcon/>
 								Закладки
 							</a>
 							
-							<a href="#" className={styles.block__item}>
+							<a className={'header__block-item'}>
 								<Icons.DeliveryIcon/>
 								Доставка
 							</a>
-							<a href="#" className={styles.block__item}>
+							<a className={'header__block-item'}>
 								<Icons.ContactsIcon/>
 								Контакты
 							</a>
 						</div>
-						<div className={styles.auth}>
+						<div className={'header__auth'} >  
 							<Icons.UserIcon/>
 							<div>
 								Вход | Регистрация
@@ -63,17 +55,17 @@ export const Header = ({className}:HeaderProps) => {
 
 				
 				<div >
-					<div className={styles.nav}>
-						<div className={styles.logo}>
-							<Logo/>
+					<div className={'header__nav'} >  
+						<div className={'header__logo'} >  
+							<Icons.LogoIcon/>
 						</div>
-						<div className={styles.find}>
+						<div className={'header__find'} >  
 							
-							<div className={styles.filter}>
+							<div className={'header__filter'} >  
 								Поиск по категориям	
 							</div>
 							
-							<div className={styles.search}>
+							<div className={'header__search'} >  
 								<input placeholder='Поиск по товарам'/>
 								<Icons.SearchIcon/>
 							</div>
@@ -82,7 +74,7 @@ export const Header = ({className}:HeaderProps) => {
 							
 						</div>
 
-						<div className={styles.route}>
+						<div className={'header__route'} >  
 							<div>
 								Каталог товаров
 							</div>
@@ -94,27 +86,27 @@ export const Header = ({className}:HeaderProps) => {
 							<a href="#">Информация</a>
 						</div>
 
-						<div className={styles.contacts}>
-							<div className={styles.socials}>
-								<a href="#" className={styles.social}>
+						<div className={'header__contacts'} >  
+							<div className={'header__socials'} >  
+								<a href="#" className={'header__social'}>
 									<Icons.ViberIcon/>
 								</a>
-								<a href="#" className={styles.social}>
+								<a href="#" className={'header__social'}>
 									<Icons.InstagramIcon/>
 								</a>
-								<a href="#" className={styles.social}>
+								<a href="#" className={'header__social'}>
 									<Icons.TelegramIcon/>
 								</a>
-								<a href="#" className={styles.social}>
+								<a href="#" className={'header__social'}>
 									<Icons.FacebookIcon/>
 								</a>
 							</div>
-							<div className={styles.number}>
+							<div className={'header__number'}>
 								<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
 							</div>
 						</div>
 
-						<div className={styles.icons}>
+						<div className={'header__icons'}>
 							<Icons.HeartIcon/>
 							<Icons.BusketIcon/>
 							<span>₽ 150 </span>

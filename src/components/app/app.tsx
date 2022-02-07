@@ -1,9 +1,7 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { Card } from '../card/card';
 import { Carousel } from '../carousel/carousel';
-import './app.css';
+import './app.scss';
 
 import data from "./data.json";
 
@@ -29,23 +27,23 @@ export  const App = () => {
 		);
 	});
 
-	interface TestProps {
-		id:number;
-	}
-	const Test = ({id}:TestProps):JSX.Element => {
-		return(
-			<div 
-				style={{
-					height: '50px',
-					width: '100%',
-					border: 'solid 1px black',
-					background: 'red',
-					textAlign: 'center'
-				}}
+	// interface TestProps {
+	// 	id:number;
+	// }
+	// const Test = ({id}:TestProps):JSX.Element => {
+	// 	return(
+	// 		<div 
+	// 			style={{
+	// 				height: '50px',
+	// 				width: '100%',
+	// 				border: 'solid 1px black',
+	// 				background: 'red',
+	// 				textAlign: 'center'
+	// 			}}
 			
-			>{id}</div>
-		);
-	};
+	// 		>{id}</div>
+	// 	);
+	// };
 		
 
 	// const content = [
@@ -70,6 +68,7 @@ export  const App = () => {
   return (
     <div className="app">
 		Приложение
+		
 		<Carousel title={'Акции'} content={content}/>
 
 		<Carousel title={'Сезонные'} content={content}/>

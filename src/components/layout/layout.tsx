@@ -1,14 +1,23 @@
 import { Header } from '../header/header';
 import { LayoutProps } from './layout.props';
-import styles from './layout.module.css';
+import './layout.scss';
 
 export const Layout = ({children}:LayoutProps):JSX.Element => {
 	return(
-		<div className={styles.layout}>
-			<Header className={styles.header}/>
-			<div className={styles.body}>
+		<div className={'layout'}>
+			<div className={"layout__header"}>
+				
+				<Header/>
+			</div>
+			
+			<div className={"layout__body"}>
 				{children}
-			</div>			
+			</div>	
+
+			{/* <div className={"layout__footer"}>
+				
+				footer
+			</div>		 */}
 		</div>
 	);
 };

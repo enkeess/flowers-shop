@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { CarouselProps } from './carousel.props';
-import styles from './carousel.module.css';
+import './carousel.scss';
 
 import cn from 'classnames';
 
@@ -57,10 +57,10 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 
 		return pages.map((page) => {
 			return(
-				<div className={styles.carousel__page} style={{minWidth: `${width}px`}}> 
+				<div className={"carousel__page"} style={{minWidth: `${width}px`}}> 
 					{page.map(item => {
 						return(
-							<div className={styles.carousel__item}>{item}</div>
+							<div className={"carousel__item"}>{item}</div>
 						);
 					})}
 				</div>
@@ -97,49 +97,49 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 	window.addEventListener('resize', updateStep);
 
 	return(
-		<div className={styles.carousel} data-name='carousel'>
-			<h2 className={styles.carousel__title}>
+		<div className={"carousel"} data-name='carousel'>
+			<h2 className={"carousel__title"}>
 				{title}
 			</h2>
 
-			<div className={styles.carousel__btns}>
-				<button className={styles.carousel__btn}
+			<div className={"carousel__btns"}>
+				<button className={"carousel__btn"}
 					onClick={leftOffset}
 				> <ArrowLeftIcon/> </button>
 				
-				<button className={styles.carousel__btn}
+				<button className={"carousel__btn"}
 					onClick={rightOffset}
 				> <ArrowRightIcon/> </button>
 			</div>
 
 			
 
-			<div className={styles.carousel__viewbox}  ref={viewboxRef}>
-				<div className={styles.carousel__content} style={{transform: `translateX(${ - width * activePage}px)`}} ref={contentRef}>
+			<div className={"carousel__viewbox"}  ref={viewboxRef}>
+				<div className={"carousel__content"} style={{transform: `translateX(${ - width * activePage}px)`}} ref={contentRef}>
 					{getPages(step)}
 				</div>
 			</div>
 
-			<div className={styles.carousel__indicators}>
-				{/* {new Array(maxPage + 1).fill(<button className={styles.carousel__indicator}/>).map(i => i)} */}
+			<div className={"carousel__indicators"}>
+				{/* {new Array(maxPage + 1).fill(<button className={carousel__indicator}/>).map(i => i)} */}
 				{
 					new Array(maxPage + 1).fill(0).map((item, i) => {
 						
 						return(
 							<button 
-								className={cn(styles.carousel__indicator, {
-									[styles.carousel__indicator_active] : i == activePage
+								className={cn("carousel__indicator", {
+									["carousel__indicator_active"] : i == activePage
 								})}
 
 								onClick={() => setActivePage(i)}
 							
 							/>
 						);})}
-				{/* <button className={cn(styles.carousel__indicator, styles.carousel__indicator_active)}/>
+				{/* <button className={cn(carousel__indicator, carousel__indicator_active)}/>
 				
-				<button className={styles.carousel__indicator}/>
-				<button className={styles.carousel__indicator}/>
-				<button className={styles.carousel__indicator}/> */}
+				<button className={carousel__indicator}/>
+				<button className={carousel__indicator}/>
+				<button className={carousel__indicator}/> */}
 			</div>
 		</div>
 	);
