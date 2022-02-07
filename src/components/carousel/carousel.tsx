@@ -1,59 +1,50 @@
-import { useLayoutEffect, useRef } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { ArrowLeftIcon, ArrowRightIcon } from '../../icons';
-import { Card } from '../card/card';
+import { useRef, useEffect, useState } from 'react';
+import { CarouselProps } from './carousel.props';
 import styles from './carousel.module.css';
 
-export const Carousel = () => {
-	const title = 'Carousel';
+import cn from 'classnames';
+
+import { ArrowLeftIcon, ArrowRightIcon } from '../../icons';
+
+export const Carousel = ({title, content, loop = true}:CarouselProps) => {
+
+	//state
 	const [width, setWidth] = useState<number>(0);
-	const [maxOffset, setMaxOffset] = useState<number>(0);
 	const [step, setStep] = useState<number>(8);
-	const [offset, setOffset] = useState<number>(0);
-
+	const [maxPage, setMaxPage] = useState<number>(0);
 	const [activePage, setActivePage] = useState<number>(0);
-
 	
+	//ref
 	const viewboxRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
 
-	const content = [
-						<Card />, <Card/>, <Card/>, <Card/>, 
-						<Card />, <Card />, <Card/>, <Card/>, 
-
-						<Card/>, <Card />, <Card />, <Card/>, 
-						<Card/>, <Card/>, <Card />, <Card />, 
-
-						<Card/>, <Card/>, <Card/>, <Card />
-					];
-	
-	const maxPage = Math.trunc(content.length / step);
-
+	//effect
 	useEffect(() => {
 		const width = viewboxRef.current?.clientWidth;
-		const maxOffset = contentRef.current?.scrollWidth;
-
-		width && setWidth(width);
-		maxOffset && setMaxOffset(maxOffset);
-		
+		width && setWidth(width);	
+		setMaxPage(Math.ceil(content.length / step) - 1);	
+		updateStep();
 	}, []);
 
+	useEffect(() => {
+		setMaxPage(Math.ceil(content.length / step) - 1);	
+	}, [step]);
+
+	//function
 	const leftOffset = () => {
-
-
+		
 		if(activePage > 0) {
 			setActivePage(activePage - 1);
-		} else {
+		} else if (loop){
 			setActivePage(maxPage);
-		}
-		
+		}	
 	};
 
 	const rightOffset = () => {
+		
 		if(activePage < maxPage) {
 			setActivePage(activePage + 1); 
-		} else {
+		} else if (loop){
 			setActivePage(0);
 		}
 	};
@@ -77,17 +68,33 @@ export const Carousel = () => {
 		});
 	};
 	
-	window.addEventListener('resize', () => {
-		const width = viewboxRef.current?.clientWidth;
+	const updateStep = () => {
+		const newWidth = viewboxRef.current?.clientWidth;
 
-		// if(width && width < 1200) {
-		// 	setStep();
-		// }
-		const maxOffset = contentRef.current?.scrollWidth;
+		if(newWidth && newWidth != width) {
+			setWidth(newWidth);
+		}
 
-		width && setWidth(width);
-		maxOffset && setMaxOffset(maxOffset);
-	});
+		if(newWidth && newWidth >= 1024 - 20) {
+			if(step != 8) {
+				setStep(8);
+				setActivePage(0);
+			}
+		} else if(newWidth && newWidth < 1024 - 20 && newWidth >= 576 - 20) {
+			if(step != 6) {
+				setStep(6);
+				setActivePage(0);
+			}
+		} else {
+			if(step != 4) {
+				setStep(4);
+				setActivePage(0);
+			}
+		}
+	};
+
+	//listener for adaptive
+	window.addEventListener('resize', updateStep);
 
 	return(
 		<div className={styles.carousel} data-name='carousel'>
@@ -105,21 +112,35 @@ export const Carousel = () => {
 				> <ArrowRightIcon/> </button>
 			</div>
 
+			
+
 			<div className={styles.carousel__viewbox}  ref={viewboxRef}>
 				<div className={styles.carousel__content} style={{transform: `translateX(${ - width * activePage}px)`}} ref={contentRef}>
-					
 					{getPages(step)}
-
-					
-
-				
 				</div>
-				
 			</div>
-			
+
+			<div className={styles.carousel__indicators}>
+				{/* {new Array(maxPage + 1).fill(<button className={styles.carousel__indicator}/>).map(i => i)} */}
+				{
+					new Array(maxPage + 1).fill(0).map((item, i) => {
+						
+						return(
+							<button 
+								className={cn(styles.carousel__indicator, {
+									[styles.carousel__indicator_active] : i == activePage
+								})}
+
+								onClick={() => setActivePage(i)}
+							
+							/>
+						);})}
+				{/* <button className={cn(styles.carousel__indicator, styles.carousel__indicator_active)}/>
+				
+				<button className={styles.carousel__indicator}/>
+				<button className={styles.carousel__indicator}/>
+				<button className={styles.carousel__indicator}/> */}
+			</div>
 		</div>
 	);
-}
-
-
-// width:`${width * Math.ceil(content.length / step)}px`}
+};

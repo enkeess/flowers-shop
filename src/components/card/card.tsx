@@ -2,16 +2,10 @@ import styles from './card.module.css';
 import src from'./img.png';
 import { StarIcon, HeartSmallIcon, HeartFillIcon, BusketIcon } from '../../icons';
 import { useState } from 'react';
+import { CardInterface } from '../../interfaces/card.interface';
 
-export const Card = ():JSX.Element => {
-	const id = 2545342;
-	const alt = "alt";
-	const text = "101 красная роза";
+export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX.Element => {	
 	const currency = "Руб";
-	const oldPrice = 8900;
-	const price = 8900;
-	const sale = 19;
-	const isTop = true;
 	const [like, setLike] = useState<boolean>(false);
 	
 	return(
@@ -19,8 +13,7 @@ export const Card = ():JSX.Element => {
 			
 			<div className={styles.img__container}>
 				
-
-			<img src={src} alt={alt} className={styles.img}/>
+			<img src={src} alt={text} className={styles.img}/>
 			{sale && <div className={styles.card__sale}> -{sale}%</div>}
 			{isTop && <div className={styles.card__top}>TOP</div> }
 			<div className={styles.card__like} onClick={() => setLike(!like)}> 

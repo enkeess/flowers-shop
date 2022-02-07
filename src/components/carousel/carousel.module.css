@@ -1,5 +1,7 @@
 .carousel {
 	position: relative;
+
+	margin-top: 60px;
 }
 
 .carousel__btns {
@@ -26,15 +28,13 @@
 	overflow: hidden;
 
 	width: var(--container-width);
-
-	/* background: #E5E5E5; */
 }
 
 .carousel__page {
-	/* padding: 5px; */
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1fr 1fr;
+	column-gap: 15px;
 	row-gap: 15px;
 }
 
@@ -54,10 +54,51 @@
 	font-weight: 700;
 }
 
+.carousel__indicators {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	margin-top: 20px;
+	height: 20px;
+	display: none;
+}
+
+.carousel__indicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	border: none;
+	border-color: var(--primary);
+	background: none;
+	position: relative;
+}
+
+.carousel__indicator::after {
+	content: '';
+	width: 4px;
+	height: 4px;
+	background: var(--primary);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+
+	transform: translate(-50%, -50%);
+}
+
+.carousel__indicator_active {
+	transition: all 0.3s;
+	border: solid 1px var(--primary);
+}
+
 .carousel__item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 }
 
 .carousel__item:nth-child(8n+1),
@@ -123,5 +164,13 @@
 
 	.carousel__page {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.carousel__indicators {
+		display: flex;
+	}
+
+	.carousel__btns {
+		display: none;
 	}
 }

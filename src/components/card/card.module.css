@@ -1,7 +1,6 @@
 .card {
 	box-sizing: border-box;
 	height: 554px;
-
 	border: 1px solid var(--primary);
 	background: var(--white);
 	box-shadow: 4px 4px 10px rgb(0 0 0 / 10%);
@@ -275,9 +274,9 @@
 		align-items: center;
 
 		height: 65px;
-		margin: 5px 15px;
+		margin: 10px 15px;
 		grid-template-columns: 1fr;
-		gap: 13px;
+		gap: 5px;
 	}
 
 	.card__name,
@@ -287,6 +286,7 @@
 
 	.card__name {
 		font-size: 12px;
+		line-height: 14px;
 	}
 
 	.card__oldPrice {
@@ -330,6 +330,7 @@
 		width: auto;
 		height: 20px;
 		fill: var(--white);
+
 		transform: translateX(-1px);
 	}
 
