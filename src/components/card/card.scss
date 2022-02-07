@@ -1,16 +1,15 @@
 .card {
   box-sizing: border-box;
   height: 554px;
-  border: 1px solid var(--primary);
   background: var(--white);
+  border: 1px solid var(--primary);
   box-shadow: 4px 4px 10px rgb(0 0 0 / 10%);
 
   &__info {
     display: grid;
-
+    grid-template-columns: 1fr 1fr;
     height: 85px;
     margin: 10px 26px;
-    grid-template-columns: 1fr 1fr;
   }
 
   &__rating {
@@ -21,43 +20,35 @@
     position: absolute;
     top: 6px;
     left: 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 56px;
     height: 56px;
-
-    color: var(--black);
-    border: 1px dashed #e72222;
-    border-radius: 50%;
-
     font-size: 16px;
     font-weight: 300;
     line-height: 18px;
+    color: var(--black);
+    border: 1px dashed #e72222;
+    border-radius: 50%;
   }
 
   &__top {
     position: absolute;
     right: 13px;
     bottom: 27px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 56px;
     height: 56px;
-
-    color: var(--primary);
-    border-radius: 50%;
-    background: rgb(157 117 140 / 39%);
-
     font-family: var(--euclid-circular-b);
     font-size: 16px;
     font-weight: normal;
     line-height: 18px;
+    color: var(--primary);
+    background: rgb(157 117 140 / 39%);
+    border-radius: 50%;
   }
 
   &__like {
@@ -73,75 +64,61 @@
 
   &__btns {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
   }
 
   &__name {
-    text-align: left;
-
     font-size: 18px;
     font-weight: 300;
     line-height: 18px;
+    text-align: left;
   }
 
   &__oldPrice {
-    text-align: right;
-
-    color: #bdbdbd;
-
     font-size: 18px;
     font-weight: 300;
     line-height: 18px;
+    color: #bdbdbd;
+    text-align: right;
     text-decoration-line: line-through;
   }
 
   &__curPrice {
-    text-align: right;
-
-    color: var(--primary);
-
     font-size: 18px;
     font-weight: 700;
     line-height: 18px;
+    color: var(--primary);
+    text-align: right;
   }
 }
 
 .img__container {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 304px;
-
   background: #fbf9fa;
 }
 
 .btn {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 220px;
   height: 63px;
-
-  cursor: pointer;
-
-  transition: all 0.3s;
-
-  color: var(--white);
-  border: none;
-  border-radius: 7px;
-  background: var(--primary);
-  box-shadow: inset 0 5px 5px rgb(0 0 0 / 15%);
-
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
+  color: var(--white);
+  cursor: pointer;
+  background: var(--primary);
+  border: none;
+  border-radius: 7px;
+  box-shadow: inset 0 5px 5px rgb(0 0 0 / 15%);
+  transition: all 0.3s;
 }
 
 .btn span {
@@ -154,15 +131,12 @@
 
 .btn::after {
   position: absolute;
-  z-index: 100;
   top: 0;
   right: 0;
-
+  z-index: 100;
   width: 92px;
   height: 63px;
-
   content: "";
-
   background: url("./btn-after.png");
 }
 
@@ -173,11 +147,9 @@
 .fast {
   width: 100%;
   height: 30px;
-
   cursor: pointer;
-
-  border: none;
   background: none;
+  border: none;
 }
 
 .fast span {
@@ -204,10 +176,9 @@
 
     &__info {
       display: grid;
-
+      grid-template-columns: 1fr 1fr;
       height: 65px;
       margin: 10px 26px;
-      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -236,7 +207,6 @@
     &__sale {
       width: 35px;
       height: 35px;
-
       font-size: 10px;
     }
 
@@ -261,12 +231,11 @@
 
     &__info {
       display: grid;
-      align-items: center;
-
-      height: 65px;
-      margin: 10px 15px;
       grid-template-columns: 1fr;
       gap: 5px;
+      align-items: center;
+      height: 65px;
+      margin: 10px 15px;
     }
 
     &__name,
@@ -289,8 +258,8 @@
 
     &__btns {
       display: grid;
-      grid-template-columns: 2fr 1fr;
       grid-template-areas: "fast btn";
+      grid-template-columns: 2fr 1fr;
 
       /* padding: 5px; */
     }
@@ -306,17 +275,15 @@
   }
 
   .btn {
+    grid-area: btn;
     width: 35px;
     height: 35px;
-
     border-radius: 50%;
-    grid-area: btn;
   }
 
   .btn::after {
     width: 32px;
     height: 35px;
-
     background: url("./btn-small-after.png");
   }
 
@@ -326,11 +293,9 @@
 
   .btn svg {
     display: block;
-
     width: auto;
     height: 20px;
     fill: var(--white);
-
     transform: translateX(-1px);
   }
 
