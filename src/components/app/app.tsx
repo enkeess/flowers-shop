@@ -69,12 +69,12 @@ export  const App = () => {
     <div className="app">
 		Приложение
 		
-		<Carousel title={'Акции'} content={content}/>
+		{/* <Carousel title={'Акции'} content={content}/>
 
 		<Carousel title={'Сезонные'} content={content}/>
 
 		<Carousel title={'Подарки'} content={content}/>
-		
+		 */}
     </div>
   );
 };

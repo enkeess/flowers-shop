@@ -179,7 +179,7 @@ export const Header = () => {
 							<div className={'header__upline-container'}>
 								<div className={'header__block'}>
 									<div className={'header__block-item'}> 
-										Валюта
+										<span>Валюта</span>   
 										<select className={'header__select'} >            
 											<option value="rub">Руб</option>
 											<option value="usd">Usd</option>
@@ -192,7 +192,7 @@ export const Header = () => {
 									</a>
 
 									<div className={'header__block-item'}>
-										Язык 
+										<span>Язык </span> 
 										<select className={'header__select'} >            
 											<option value="rus">Русский</option>
 											<option value="en">English</option>
@@ -229,42 +229,63 @@ export const Header = () => {
 						
 				</header>
 
-{/* 
-			<div className='header__side'>
-				sidebar
 
-				<div className={'header__route'} >  
-					<div>
-						Каталог товаров
+			<div className='side'>
+				<div className={'side__upline'}>
+					<div className={'side__title'}>
+						Меню
 					</div>
-
-					<a href="#">Форум</a>
-					<a href="#">Отзывы</a>
-					<a href="#">Акции</a >
-					<a href="#">Новости</a>
-					<a href="#">Информация</a>
+					<button className={'side__close'}>
+						<Icons.CloseIcon/>
+					</button>
 				</div>
 
-				<div className={'header__contacts'} >  
-					<div className={'header__socials'} >  
-						<a href="#" className={'header__social'}>
-							<Icons.ViberIcon/>
-						</a>
-						<a href="#" className={'header__social'}>
-							<Icons.InstagramIcon/>
-						</a>
-						<a href="#" className={'header__social'}>
-							<Icons.TelegramIcon/>
-						</a>
-						<a href="#" className={'header__social'}>
-							<Icons.FacebookIcon/>
-						</a>
-					</div>
-					<div className={'header__number'}>
-						<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
-					</div>
+				<ul className={'side__list'}>
+					{routes.map(route => {
+						return(
+							<li className={'side__list-item'}>
+								<a href={route.link}>
+									{route.text}
+								</a>
+							</li>
+						);
+					})}
+				</ul>
+
+				<div className={'side__socials'} >  
+					<a href="#" className={'side__social'}>
+						<Icons.ViberIcon/>
+					</a>
+					<a href="#" className={'side__social'}>
+						<Icons.InstagramIcon/>
+					</a>
+					<a href="#" className={'side__social'}>
+						<Icons.TelegramIcon/>
+					</a>
+					<a href="#" className={'side__social'}>
+						<Icons.FacebookIcon/>
+					</a>
 				</div>
-			</div> */}
+
+									{/* <div className={'header__route'} >  
+										<div>
+											Каталог товаров
+										</div>
+
+										<a href="#">Форум</a>
+										<a href="#">Отзывы</a>
+										<a href="#">Акции</a >
+										<a href="#">Новости</a>
+										<a href="#">Информация</a>
+									</div>
+
+									<div className={'header__contacts'} >  
+										
+										<div className={'header__number'}>
+											<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
+										</div>
+									</div> */}
+			</div>
 
 			</>
 		);
