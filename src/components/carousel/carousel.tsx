@@ -6,13 +6,15 @@ import cn from 'classnames';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../icons';
 
-export const Carousel = ({title, content, loop = true}:CarouselProps) => {
+export const Carousel = ({title, content, loop = true, lines = 1}:CarouselProps) => {
 
 	//state
 	const [width, setWidth] = useState<number>(0);
-	const [step, setStep] = useState<number>(8);
+	const [inLine, setInLine] = useState<number>(4);
+	const [step, setStep] = useState<number>(lines * inLine);
 	const [maxPage, setMaxPage] = useState<number>(0);
 	const [activePage, setActivePage] = useState<number>(0);
+	
 	
 	//ref
 	const viewboxRef = useRef<HTMLDivElement>(null);
@@ -23,13 +25,18 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 		const width = viewboxRef.current?.clientWidth;
 		width && setWidth(width);	
 		setMaxPage(Math.ceil(content.length / step) - 1);	
-		updateStep();
+		updateInLIne();
 	}, []);
 
 	useEffect(() => {
 		setMaxPage(Math.ceil(content.length / step) - 1);	
 	}, [step]);
 
+	useEffect(() => {
+		setStep(lines * inLine);
+	}, [inLine]);
+
+	
 	//function
 	const leftOffset = () => {
 		
@@ -50,17 +57,41 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 	};
 
 	const getPages = (step:number) => {
-		const pages:JSX.Element[][] = [];
-		for(let page = 0; page < content.length ; page = page + step) {
-			pages[page / step] = (content.slice(page, page + step));
-		}
+		const pages:JSX.Element[][][] = [];
+		
+		for( 
+			let counter = {page: 0, i: 0}; 
+			counter.page < content.length; 
+			
+			counter =  {
+				...counter,
+				i: counter.i + 1 }
+		){
 
+			pages[counter.i] = new Array(lines).fill([]);
+			for(let line = 0; line < lines; line++ ) {
+				pages[counter.i][line] = content.slice(counter.page, counter.page + inLine);
+				counter = {...counter, page : counter.page + inLine };
+			}	
+		}
+		
 		return pages.map((page) => {
 			return(
-				<div className={"carousel__page"} style={{minWidth: `${width}px`}}> 
-					{page.map(item => {
+				<div 
+					className={cn("carousel__page", {
+						["carousel__page_db"] : lines == 2
+					})} 
+					style={{minWidth: `${width}px`}}
+				> 
+					{page.map(row => {
 						return(
-							<div className={"carousel__item"}>{item}</div>
+							<div className={"carousel__row"}> 
+								{row.map(item => {
+									return(
+										<div className={"carousel__item"}>{item}</div>
+									);
+								})} 
+							</div>
 						);
 					})}
 				</div>
@@ -68,7 +99,7 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 		});
 	};
 	
-	const updateStep = () => {
+	const updateInLIne = () => {
 		const newWidth = viewboxRef.current?.clientWidth;
 
 		if(newWidth && newWidth != width) {
@@ -76,25 +107,43 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 		}
 
 		if(newWidth && newWidth >= 1024 - 20) {
-			if(step != 8) {
-				setStep(8);
+			if(inLine != 4) {
+				setInLine(4);
 				setActivePage(0);
 			}
 		} else if(newWidth && newWidth < 1024 - 20 && newWidth >= 576 - 20) {
-			if(step != 6) {
-				setStep(6);
+			if(inLine != 3) {
+				setInLine(3);
 				setActivePage(0);
 			}
 		} else {
-			if(step != 4) {
-				setStep(4);
+			if(step != 2) {
+				setInLine(2);
 				setActivePage(0);
 			}
 		}
 	};
 
 	//listener for adaptive
-	window.addEventListener('resize', updateStep);
+	window.addEventListener('resize', updateInLIne);
+
+	const getIndicators = () => {
+		return(
+			<div className={"carousel__indicators"}>
+				{
+					new Array(maxPage + 1).fill(0).map((item, i) => {
+						return(
+							<button 
+								className={cn("carousel__indicator", {
+									["carousel__indicator_active"] : i == activePage
+								})}
+								onClick={() => setActivePage(i)}
+							/>
+						);})
+				}
+			</div>
+		);
+	};
 
 	return(
 		<div className={"carousel"} data-name='carousel'>
@@ -120,22 +169,7 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 				</div>
 			</div>
 
-			<div className={"carousel__indicators"}>
-				{
-					new Array(maxPage + 1).fill(0).map((item, i) => {
-						
-						return(
-							<button 
-								className={cn("carousel__indicator", {
-									["carousel__indicator_active"] : i == activePage
-								})}
-
-								onClick={() => setActivePage(i)}
-							
-							/>
-						);})
-				}
-			</div>
+			{getIndicators()}
 		</div>
 	);
 };
