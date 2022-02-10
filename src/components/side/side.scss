@@ -1,0 +1,45 @@
+.side {
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: scroll;
+  background: #e5e5e5;
+  z-index: 10;
+
+  transition: all 0.5s;
+
+  padding-bottom: 50px;
+
+  &__upline {
+    height: 72px;
+    background: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--white);
+    font-weight: 700;
+    margin-left: 20px;
+  }
+
+  &__close {
+    display: flex;
+    background: none;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+  }
+
+  &_active {
+    left: 0;
+  }
+}

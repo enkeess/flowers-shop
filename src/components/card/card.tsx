@@ -3,6 +3,7 @@ import src from'./img.png';
 import { StarIcon, HeartSmallIcon, HeartFillIcon, BusketIcon } from '../../icons';
 import { useState } from 'react';
 import { CardInterface } from '../../interfaces/card.interface';
+import { Btn } from '../btn/btn';
 
 export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX.Element => {	
 	const currency = "Руб";
@@ -44,10 +45,11 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 				</div>
 			</div>
 			<div className={"card__btns"}>
-				<button className={"btn"}>
+				<Btn type={"card"}>
 					<span>Заказать</span>
 					<BusketIcon/>
-				</button>
+				</Btn>
+				
 
 				<button className={"fast"}>
 					<span>Быстрый заказ</span>

@@ -1,0 +1,87 @@
+.btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px 50px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: var(--white);
+
+  cursor: pointer;
+
+  background-color: var(--primary);
+  background-image: url("./bg/btn-after.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  border: none;
+  border-radius: 7px;
+
+  box-shadow: inset 0 5px 5px rgb(0 0 0 / 15%);
+
+  transition: all 0.3s;
+
+  span {
+    display: block;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+
+  &:active {
+    background-color: var(--primary-active);
+  }
+
+  &_fill {
+    font-weight: 300;
+    background: var(--primary);
+  }
+
+  &_outline {
+    font-weight: 300;
+    background: none;
+    border: solid 1px var(--primary);
+    color: var(--primary);
+    box-shadow: none;
+    &:hover {
+      background: var(--primary-hover);
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 14px;
+    padding: 15px 10px;
+
+    &_card {
+      padding: 0;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-image: url("./bg/btn-small-after.png");
+      span {
+        display: none;
+      }
+
+      svg {
+        display: block;
+        width: auto;
+        height: 20px;
+        fill: var(--white);
+        transform: translateX(-1px);
+      }
+    }
+  }
+}

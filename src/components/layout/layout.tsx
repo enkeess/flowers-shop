@@ -6,7 +6,6 @@ export const Layout = ({children}:LayoutProps):JSX.Element => {
 	return(
 		<div className={'layout'}>
 			<div className={"layout__header"}>
-				
 				<Header/>
 			</div>
 			

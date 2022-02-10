@@ -1,0 +1,41 @@
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  list-style-type: none;
+  &__item {
+    height: 27px;
+    width: 27px;
+
+    background: var(--primary);
+
+    border-radius: 50%;
+
+    &-link {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        height: 15px;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .socials {
+    justify-content: flex-start;
+    &__item {
+      height: 60px;
+      width: 60px;
+      svg {
+        height: 30px;
+        width: auto;
+      }
+    }
+  }
+}

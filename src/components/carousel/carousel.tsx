@@ -121,7 +121,6 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 			</div>
 
 			<div className={"carousel__indicators"}>
-				{/* {new Array(maxPage + 1).fill(<button className={carousel__indicator}/>).map(i => i)} */}
 				{
 					new Array(maxPage + 1).fill(0).map((item, i) => {
 						
@@ -134,12 +133,8 @@ export const Carousel = ({title, content, loop = true}:CarouselProps) => {
 								onClick={() => setActivePage(i)}
 							
 							/>
-						);})}
-				{/* <button className={cn(carousel__indicator, carousel__indicator_active)}/>
-				
-				<button className={carousel__indicator}/>
-				<button className={carousel__indicator}/>
-				<button className={carousel__indicator}/> */}
+						);})
+				}
 			</div>
 		</div>
 	);

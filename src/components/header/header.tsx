@@ -1,40 +1,41 @@
 import './header.scss';
 import * as Icons from "../../icons";
 import { useEffect, useState } from 'react';
+import { Socials } from '../socials/socials';
+import {Btn} from '../btn/btn';
+import { Side } from '../side/side';
 
 interface RouteInterface {
 	text:string;
 	link: string;
 }
 
-export const Header = () => {
-	const routes:RouteInterface[] = [
+const routes:RouteInterface[] = [
 		{
 			text: 'Форум',
 			link: '#'
-		},
-
-		{
+		},{
 			text: 'Отзывы',
 			link: '#'
-		},
-
-		{
+		},{
 			text: 'Акции',
 			link: '#'
-		},
-
-		{
+		},{
 			text: 'Новости',
 			link: '#'
-		},
-
-		{
+		},{
 			text: 'Информация',
 			link: '#'
 		}
-
 	];
+
+
+
+
+
+
+export const Header = () => {
+	
 
 	const getRoutes = () => {
 		return(routes.map((item) => {
@@ -45,13 +46,18 @@ export const Header = () => {
 	};
 
 	const [withSide, setWithSide] = useState<boolean>(false);
+	const [showSide, setShowSide] = useState<boolean>(false);
+
+	const toggleShowSide = () => {
+		setShowSide(!showSide);
+	};
 
 	const updateWithSide = () => {
 		const width = window.innerWidth;
 
-		if(width < 768 && !withSide) {
+		if(width <= 768 && !withSide) {
 			setWithSide(true);
-		} else if(width >= 768 && width) {
+		} else if(width > 768 && width) {
 			setWithSide(false);
 		}
 	};
@@ -60,9 +66,9 @@ export const Header = () => {
 
 	useEffect(updateWithSide, []);
 
+
 	const renderHeader = () => {
 		return(
-			
 			<header className={'header'}>
 					<div className={'header__upline'}>
 						<div className={'header__upline-container'}>
@@ -141,19 +147,8 @@ export const Header = () => {
 							</div>
 
 							<div className={'header__contacts'} >  
-								<div className={'header__socials'} >  
-									<a href="#" className={'header__social'}>
-										<Icons.ViberIcon/>
-									</a>
-									<a href="#" className={'header__social'}>
-										<Icons.InstagramIcon/>
-									</a>
-									<a href="#" className={'header__social'}>
-										<Icons.TelegramIcon/>
-									</a>
-									<a href="#" className={'header__social'}>
-										<Icons.FacebookIcon/>
-									</a>
+								<div className={'header__socials'} > 
+									<Socials/> 
 								</div>
 								<div className={'header__number'}>
 									<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
@@ -175,117 +170,92 @@ export const Header = () => {
 		return(
 			<>
 				<header className={'header'}>
-						<div className={'header__upline'}>
-							<div className={'header__upline-container'}>
-								<div className={'header__block'}>
-									<div className={'header__block-item'}> 
-										<span>Валюта</span>   
-										<select className={'header__select'} >            
-											<option value="rub">Руб</option>
-											<option value="usd">Usd</option>
-										</select>	
-									</div>
+					<div className={'header__upline'}>
+						<div className={'header__upline-container'}>
+							<div className={'header__block'}>
+								<div className={'header__block-item'}> 
+									<span>Валюта</span>   
+									<select className={'header__select'} >            
+										<option value="rub">Руб</option>
+										<option value="usd">Usd</option>
+									</select>	
+								</div>
 
-									<a className={'header__block-item'}>
-										<Icons.DeliveryIcon/>
-										Доставка и оплата
-									</a>
+								<a className={'header__block-item'}>
+									<Icons.DeliveryIcon/>
+									Доставка и оплата
+								</a>
 
-									<div className={'header__block-item'}>
-										<span>Язык </span> 
-										<select className={'header__select'} >            
-											<option value="rus">Русский</option>
-											<option value="en">English</option>
-										</select>	
-									</div>
-									
+								<div className={'header__block-item'}>
+									<span>Язык </span> 
+									<select className={'header__select'} >            
+										<option value="rus">Русский</option>
+										<option value="en">English</option>
+									</select>	
 								</div>
 								
 							</div>
-						</div>
-
-						
-						
-						<div  className={'header__nav'}>  
-							<div className={'header__menu'}>
-								<Icons.MenuIcon/>
-							</div>
-
-							<div  className={'header__logo'}>  
-								<Icons.LogoIcon/>
-							</div>
-							
-							<div className={'header__icons'}>
-								<div  >  
-									<Icons.SearchIcon/>
-								</div>
-								
-								<div >
-									<Icons.BusketIcon/>
-								</div>
-							</div>
 							
 						</div>
+					</div>
+
+					
+					
+					<div  className={'header__nav'}>  
+						<div className={'header__menu'}>
+							<Icons.MenuIcon onClick={toggleShowSide}/>
+						</div>
+
+						<div  className={'header__logo'}>  
+							<Icons.LogoIcon/>
+						</div>
+						
+						<div className={'header__icons'}>
+							<div  >  
+								<Icons.SearchIcon/>
+							</div>
+							
+							<div >
+								<Icons.BusketIcon/>
+							</div>
+						</div>
+						
+					</div>
 						
 				</header>
 
 
-			<div className='side'>
-				<div className={'side__upline'}>
-					<div className={'side__title'}>
-						Меню
-					</div>
-					<button className={'side__close'}>
-						<Icons.CloseIcon/>
-					</button>
-				</div>
+			
 
-				<ul className={'side__list'}>
-					{routes.map(route => {
-						return(
-							<li className={'side__list-item'}>
-								<a href={route.link}>
-									{route.text}
-								</a>
-							</li>
-						);
-					})}
-				</ul>
+				<Side 
+					title={"Меню"} 
+					showSide={showSide}  
+					toggleShowSide={toggleShowSide}	
+				>
+					<ul className={'side__list'}>
+						<div>
+							<span>+38 (067) 829 30 30</span>
+							<Btn>
+								<a href='tel:+380678293030'> Позвонить</a>
+							</Btn>
+						</div>
+						{routes.map(route => {
+							return(
+								<li className={'side__list-item'}>
+									<a href={route.link}>
+										{route.text}
+									</a>
+								</li>
+							);
+						})}
+					</ul>
 
-				<div className={'side__socials'} >  
-					<a href="#" className={'side__social'}>
-						<Icons.ViberIcon/>
-					</a>
-					<a href="#" className={'side__social'}>
-						<Icons.InstagramIcon/>
-					</a>
-					<a href="#" className={'side__social'}>
-						<Icons.TelegramIcon/>
-					</a>
-					<a href="#" className={'side__social'}>
-						<Icons.FacebookIcon/>
-					</a>
-				</div>
+					<Socials/> 
+					
+				</Side>
+				
 
-									{/* <div className={'header__route'} >  
-										<div>
-											Каталог товаров
-										</div>
-
-										<a href="#">Форум</a>
-										<a href="#">Отзывы</a>
-										<a href="#">Акции</a >
-										<a href="#">Новости</a>
-										<a href="#">Информация</a>
-									</div>
-
-									<div className={'header__contacts'} >  
-										
-										<div className={'header__number'}>
-											<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
-										</div>
-									</div> */}
-			</div>
+			
 
 			</>
 		);
@@ -293,6 +263,7 @@ export const Header = () => {
 
 	return (
 		<>{!withSide ? renderHeader() : renderSmallHeader()}</>	
+		// <>{renderHeader()}</>
 	);
 
 	

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Card } from '../card/card';
 import { Carousel } from '../carousel/carousel';
+
+import { Btn } from '../btn/btn';
+import { Side } from '../side/side';
 import './app.scss';
 
 import data from "./data.json";
@@ -67,14 +70,14 @@ export  const App = () => {
 
   return (
     <div className="app">
-		Приложение
-		
-		{/* <Carousel title={'Акции'} content={content}/>
+		{/* Приложение */}
+		{/* <Socials/> */}
+		<Carousel title={'Акции'} content={content}/>
 
 		<Carousel title={'Сезонные'} content={content}/>
 
 		<Carousel title={'Подарки'} content={content}/>
-		 */}
+
     </div>
   );
 };

@@ -161,8 +161,31 @@
 			"forI" : [],
 			"color": "red",
 			"occasions" : []
+		}	
+	],
+	"categories" :[
+		{
+			"name": "roses",
+			"subcategories" : [
+				"White Roses",
+				"Red Roses"
+			]
+		},
+		{
+			"name": "flower in box",
+			"subcategories" : [
+				"roses in box",
+				"flowers in a heart box"
+			]
+		},
+		{
+			"name": "all bouquet",
+			"subcategories" : [
+				"bouquet of roses",
+				"bouquet of chrysanthemums"
+			]
 		}
-		
+
 	]
 }
 
