@@ -1,6 +1,8 @@
 import React from 'react';
+import { HomePage } from '../../pages/home';
 import { Card } from '../card/card';
 import { Carousel } from '../carousel/carousel';
+import { Dropdown } from '../dropdown/dropdown';
 
 
 import './app.scss';
@@ -23,60 +25,22 @@ export  const App = () => {
 	// 	updateContent();
 	// },[]);
 
-	const content = data.cards.map(card => {
-		return(
-			<Card {...card}/>
-		);
-	});
-
-	interface TestProps {
-		id:number;
-	}
-	const Test = ({id}:TestProps):JSX.Element => {
-		return(
-			<div 
-				style={{
-					height: '50px',
-					width: '100%',
-					border: 'solid 1px black',
-					background: 'red',
-					textAlign: 'center'
-				}}
-			
-			>{id}</div>
-		);
-	};
-		
-
-	const content1 = [
-		<Test id={1}/>,
-		<Test id={2}/>,
-		<Test id={3}/>,
-		<Test id={4}/>,
-		<Test id={5}/>,
-		<Test id={6}/>,
-		<Test id={7}/>,
-		<Test id={8}/>,
-		<Test id={9}/>,
-		<Test id={10}/>,
-		<Test id={11}/>,
-		<Test id={12}/>,
-		<Test id={13}/>,
-		<Test id={14}/>,
-		<Test id={15}/>,
-		<Test id={16}/>
-	];
+	
 
   return (
     <div className="app">
 		{/* Приложение */}
 		{/* <Socials/> */}
-		<Carousel title={'Акции'} content={content} lines={2}/>
-
-		{/* <Carousel title={'Сезонные'} content={content}/>
-
+		{/* <Carousel title={'Акции'} content={content} lines={2}/>
+		<Carousel title={'Сезонные'} content={content}/>
 		<Carousel title={'Подарки'} content={content}/> */}
-
+		{/* <Dropdown title="test">
+			<span>
+				pop
+			</span>
+			
+		</Dropdown> */}
+		<HomePage/>
     </div>
   );
 };

@@ -20,7 +20,10 @@ button {
   font-family: var(--euclid-circular-b);
 }
 
+ul {
+  list-style-type: none;
+}
+
 a {
-  color: var(--dark-gray);
   text-decoration: none;
 }

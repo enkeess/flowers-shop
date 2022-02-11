@@ -1,0 +1,146 @@
+.footer {
+  margin-top: 30px;
+  a {
+    color: var(--white);
+  }
+
+  color: var(--white);
+  background: var(--dark-gray);
+
+  &__container {
+    margin: 0 auto;
+    width: var(--container-width);
+    padding: 20px 0;
+  }
+  &__top-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 20px;
+  }
+
+  &__bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 35px;
+  }
+
+  &__pay {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__pay-list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__pay-link {
+    color: var(--white);
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    &__logo {
+      svg {
+        height: 130px;
+        width: auto;
+      }
+    }
+    &__link {
+      font-size: 13px;
+      line-height: 20px;
+    }
+    &__pay-title {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__logo {
+      grid-area: logo;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      svg {
+        height: 170px;
+        width: auto;
+      }
+    }
+    &__link {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    &__top-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        "logo . . "
+        "logo . . ";
+      column-gap: 20px;
+      border-bottom: 1px solid var(--primary);
+      padding-bottom: 20px;
+    }
+    &__copy {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    &__pay {
+      gap: 10px;
+      &-list {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    &__top-row {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: none;
+    }
+
+    &__logo {
+      grid-area: initial;
+      margin-bottom: 20px;
+    }
+
+    &__bottom-row {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    &__pay {
+      width: 100%;
+      &-title {
+        display: none;
+      }
+      &-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &__copy {
+      margin-top: 40px;
+    }
+  }
+}

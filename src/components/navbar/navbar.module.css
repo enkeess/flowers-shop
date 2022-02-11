@@ -1,8 +1,0 @@
-.nav {
-	display: grid;
-
-	padding: 15px 50px;
-
-	background: var(--dark-gray);
-	grid-template-columns: 800px auto 174px;
-}

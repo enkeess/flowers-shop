@@ -1,18 +1,60 @@
 import {ReactComponent as Arrow} from './arrow.svg';
-import styles from './dropdown.module.css';
+import { DropdownProps } from './dropdown.props';
+import { ArrowRightIcon } from '../../icons';
+import cn from 'classnames';
+import './dropdown.scss';
+import { useEffect, useState } from 'react';
 
-export const Dropdown = ():JSX.Element => {
-	const text = "ru";
+export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.Element => {
+	
+	const content = Array.isArray(children) ? children : [children];
+	const [active, setActive] = useState<boolean>(false);
+
+	useEffect(() => {
+		if(type == "footer") {
+			setActive(true);
+		}
+	}, []);
+
+	const toggleActive = () => {
+		setActive(!active);
+	};
+
 	return(
-		<div>
-			<div className={styles.title}> Dropdown title </div>
-			<button> {text} <Arrow/> </button>
-			{/* <ul> 
-				<li key={1}> item 1</li>
-				<li key={2}> item 2</li>
-				<li key={3}> item 3</li>
-				<li key={4}> item 4</li>
-			</ul> */}
+		<div className={cn('dropdown', {
+			["dropdown_f"] : type == "footer"
+		})}>
+			<div className='dropdown__top'> 
+				<div className={cn('dropdown__title', 'dropdown__title_bold')}> 
+					{title}
+				</div>
+
+				<button 
+					className={cn('dropdown__btn', {
+						["dropdown__btn_active"]:active,
+						
+					})} 
+					onClick={toggleActive}
+				> 
+					<ArrowRightIcon/> 
+				</button>
+			</div>
+			
+			{active && 
+				<ul className={cn('dropdown__list')}> 
+					{content.map(item => {
+						return(
+							<li className='dropdown__item'>
+								{item}
+							</li>
+						);
+					})}
+				</ul>
+			
+			}
+			
+
+			
 
 		</div>
 	);

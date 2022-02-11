@@ -106,12 +106,12 @@ export const Carousel = ({title, content, loop = true, lines = 1}:CarouselProps)
 			setWidth(newWidth);
 		}
 
-		if(newWidth && newWidth >= 1024 - 20) {
+		if(newWidth && newWidth > 1024 - 20) {
 			if(inLine != 4) {
 				setInLine(4);
 				setActivePage(0);
 			}
-		} else if(newWidth && newWidth < 1024 - 20 && newWidth >= 576 - 20) {
+		} else if(newWidth && newWidth <= 1024 - 20 && newWidth > 576 - 20) {
 			if(inLine != 3) {
 				setInLine(3);
 				setActivePage(0);
