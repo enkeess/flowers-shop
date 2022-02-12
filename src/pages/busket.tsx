@@ -1,7 +1,9 @@
+import { Layout } from '../components'
+
 export const BusketPage = () => {
 	return(
-		<div>
+		<Layout>
 			Busket Page
-		</div>
+		</Layout>
 	);
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './app/app';
+import App  from './app/app';
 import {Layout} from './components';
 import './index.scss';
 
@@ -8,9 +8,9 @@ import './index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout>
+    {/* <Layout> */}
 		<App />
-	</Layout>
+	{/* </Layout> */}
 	
   </React.StrictMode>,
   document.getElementById('root')

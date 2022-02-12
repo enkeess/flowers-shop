@@ -1,4 +1,4 @@
-import { Card, Carousel, Promo } from '../components';
+import { Card, Carousel, Layout, Promo, withLayout } from '../components';
 import data from '../app/data.json';
 
 export const HomePage = () => {
@@ -49,14 +49,15 @@ export const HomePage = () => {
 	];
 
 	return(
-		<>
+		<Layout>
 			<Promo/>
 
 			<Carousel title={'Акции'} content={content} lines={2}/>
 			<Carousel title={'Сезонные'} content={content}/>
 			<Carousel title={'Подарки'} content={content}/>
 			
-		</>
+		</Layout>
+
 	);
 };
 

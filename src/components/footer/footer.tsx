@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { LogoFIcon } from '../../icons';
 import { Dropdown } from '../dropdown/dropdown';
 import './footer.scss';
@@ -8,34 +9,40 @@ export const Footer = () => {
 			<div className={'footer__container'}>
 				<div className={'footer__top-row'}>
 					<div className={'footer__logo'}>
-						<LogoFIcon/>
+						<Link to="/" >  
+							<LogoFIcon/>
+						</Link>
+						
 					</div>
 
 					
 					<Dropdown title={"Информация"} type={'footer'}>
-						<a href={'#'} className={'footer__link'}> О нас </a>
-						<a href={'#'} className={'footer__link'}> Доставка и оплата </a>
-						<a href={'#'} className={'footer__link'}> Политика конфиденциальности </a>
+						
+						<Link to="/about" className={'footer__link'}> О нас </Link>
+						<Link to="/delivery" className={'footer__link'}> Доставка и оплата </Link>
+						<Link to="/privacy" className={'footer__link'}> Политика конфиденциальности </Link>
+						
 					</Dropdown>
 					
 					<Dropdown title={"Служба поддержки"} type={'footer'}>
 						<a href={'#'} className={'footer__link'}> Карта сайта </a>
 						<a href={'#'} className={'footer__link'}> Возврат товара </a>
-						<a href={'#'} className={'footer__link'}> Связаться с нами для сотрудничества </a>
+						<Link to="/contacts" className={'footer__link'}> Связаться с нами для сотрудничества </Link>
 					</Dropdown>
 
 					<Dropdown title={"Личный кабинет"} type={'footer'}>
 						<a href={'#'} className={'footer__link'}> Личный кабинет </a>
 						<a href={'#'} className={'footer__link'}> История заказа </a>
 						<a href={'#'} className={'footer__link'}> Закладки </a>
-						<a href={'#'} className={'footer__link'}> Список новостей </a>
+						<Link to="/news" className={'footer__link'}> Новости </Link>
 					</Dropdown>
 					
 
 					<Dropdown title={"Дополнительно"} type={'footer'}>
 						<a href={'#'} className={'footer__link'}> подарочные <br/> сертификаты </a>
-						<a href={'#'} className={'footer__link'}> акции </a>
+						<Link to="/promotions" className={'footer__link'}> Акции </Link>
 						<a href={'#'} className={'footer__link'}> цветы в офис </a>
+						
 					</Dropdown>
 
 					

@@ -1,9 +1,9 @@
 import { Layout } from '../components';
 
-export const PromotionsPage = () => {
+export const FavoritesPage = () => {
 	return(
 		<Layout>
-			Promotions Page
+			Favorites Page
 		</Layout>
 	);
 };

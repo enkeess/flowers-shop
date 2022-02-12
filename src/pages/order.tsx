@@ -1,7 +1,9 @@
+import { Layout } from '../components'
+
 export const OrderPage = () => {
 	return(
-		<div>
+		<Layout>
 			Order Page
-		</div>
+		</Layout>
 	);
 };

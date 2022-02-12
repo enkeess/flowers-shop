@@ -5,6 +5,8 @@ import { Socials } from '../socials/socials';
 import {Btn} from '../btn/btn';
 import { Side } from '../side/side';
 
+import { Link } from 'react-router-dom';
+
 interface RouteInterface {
 	text:string;
 	link: string;
@@ -13,26 +15,21 @@ interface RouteInterface {
 const routes:RouteInterface[] = [
 		{
 			text: 'Форум',
-			link: '#'
+			link: '/forum'
 		},{
 			text: 'Отзывы',
-			link: '#'
+			link: '/reviews'
 		},{
 			text: 'Акции',
-			link: '#'
+			link: '/promotions'
 		},{
 			text: 'Новости',
-			link: '#'
+			link: '/news'
 		},{
 			text: 'Информация',
-			link: '#'
+			link: '/info'
 		}
 	];
-
-
-
-
-
 
 export const Header = () => {
 	
@@ -40,7 +37,10 @@ export const Header = () => {
 	const getRoutes = () => {
 		return(routes.map((item) => {
 			return(
-				<a key={item.text} href={item.link}> {item.text}</a>
+				<Link to={item.link}>
+					{item.text}
+				</Link>
+				
 			);
 		}));
 	};
@@ -65,7 +65,6 @@ export const Header = () => {
 	window.addEventListener('resize', updateWithSide);
 
 	useEffect(updateWithSide, []);
-
 
 	const renderHeader = () => {
 		return(
@@ -95,19 +94,20 @@ export const Header = () => {
 									</select>	
 								</div>
 								
-								<a className={'header__block-item'}>
+								<Link to="/favorites" className={'header__block-item'}>
 									<Icons.HeartSmallIcon/>
 									Закладки
-								</a>
+								</Link>
 								
-								<a className={'header__block-item'}>
+								<Link to="/delivery" className={'header__block-item'}>
 									<Icons.DeliveryIcon/>
 									Доставка
-								</a>
-								<a className={'header__block-item'}>
+								</Link>
+
+								<Link to="/contacts" className={'header__block-item'}>
 									<Icons.ContactsIcon/>
 									Контакты
-								</a>
+								</Link>
 							</div>
 							<div className={'header__auth'} >  
 								<Icons.UserIcon/>
@@ -123,7 +123,10 @@ export const Header = () => {
 					<div >
 						<div className={'header__nav'} >  
 							<div className={'header__logo'} >  
-								<Icons.LogoIcon/>
+								<Link to="/">
+									<Icons.LogoIcon/>
+								</Link>
+								
 							</div>
 							<div className={'header__find'} >  
 								
@@ -143,7 +146,7 @@ export const Header = () => {
 								</div>
 
 								{getRoutes()}
-
+								
 							</div>
 
 							<div className={'header__contacts'} >  

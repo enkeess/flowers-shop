@@ -1,7 +1,9 @@
+import { Layout } from '../components';
+
 export const ForumPage = () => {
 	return(
-		<div>
+		<Layout>
 			Forum Page
-		</div>
+		</Layout>
 	);
 };

@@ -1,7 +1,8 @@
+import { Layout } from '../components';
 export const NewsPage = () => {
 	return(
-		<div>
+		<Layout>
 			News Page
-		</div>
+		</Layout>
 	);
 };

@@ -1,7 +1,9 @@
+import { Layout } from '../components'
+
 export const ReviewsPage = () => {
 	return(
-		<div>
+		<Layout>
 			Reviews Page
-		</div>
+		</Layout>
 	);
 };

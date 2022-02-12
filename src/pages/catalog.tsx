@@ -1,7 +1,9 @@
+import { Layout } from '../components';
+
 export const CatalogPage = () => {
 	return(
-		<div>
+		<Layout>
 			Catalog Page
-		</div>
+		</Layout>
 	);
 };
