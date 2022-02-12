@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App, Layout} from './components';
+import { App } from './app/app';
+import {Layout} from './components';
 import './index.scss';
 
 

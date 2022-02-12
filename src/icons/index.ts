@@ -17,6 +17,10 @@ import {ReactComponent as ArrowLeftIcon} from './arrow-left-icon.svg';
 import {ReactComponent as ArrowRightIcon} from './arrow-right-icon.svg';
 import {ReactComponent as MenuIcon} from './menu-icon.svg';
 import {ReactComponent as CloseIcon} from './close-icon.svg';
+import {ReactComponent as GiftboxIcon} from './giftbox-icon.svg';
+import {ReactComponent as PhotosIcon} from './photos-icon.svg';
+import {ReactComponent as VideoIcon} from './video-icon.svg';
+
 
 export {
 	InstagramIcon,
@@ -37,5 +41,8 @@ export {
 	ArrowLeftIcon,
 	ArrowRightIcon,
 	MenuIcon,
-	CloseIcon
+	CloseIcon,
+	GiftboxIcon,
+	PhotosIcon,
+	VideoIcon
 };

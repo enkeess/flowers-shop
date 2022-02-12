@@ -1,4 +1,7 @@
 .header {
+  //   a {
+  //     color: var(--dark-gray);
+  //   }
   display: grid;
   grid-template-rows: 50px 150px;
 
@@ -131,6 +134,10 @@
     justify-content: flex-end;
   }
 
+  &__number a {
+    color: var(--dark-gray);
+  }
+
   &__route {
     display: flex;
     grid-area: route;
@@ -139,6 +146,9 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
+    a {
+      color: var(--dark-gray);
+    }
   }
 
   &__icons {
@@ -162,79 +172,6 @@
     outline: none;
   }
 }
-
-// .side {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   min-height: 100vh;
-//   background: #e5e5e5;
-//   z-index: 10;
-
-//   padding-bottom: 50px;
-//   &__upline {
-//     height: 72px;
-//     background: var(--dark-gray);
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//   }
-
-//   &__title {
-//     font-size: 18px;
-//     line-height: 24px;
-//     color: var(--white);
-//     font-weight: 700;
-//     margin-left: 20px;
-//   }
-
-//   &__close {
-//     display: flex;
-//     background: none;
-//     border: none;
-//     align-items: center;
-//     justify-content: center;
-//     width: 60px;
-//     height: 60px;
-//   }
-//   &__list {
-//     display: flex;
-//     flex-direction: column;
-//     margin: 0 20px;
-//   }
-//   &__list-item {
-//     font-weight: 300;
-//     font-size: 20px;
-//     line-height: 24px;
-//     height: 80px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-start;
-//     border-bottom: solid 1px var(--light-gray);
-//   }
-//   &__socials {
-//     display: flex;
-//     gap: 45px;
-//     justify-content: center;
-//     margin: 0 20px;
-//     margin-top: 43px;
-//   }
-
-//   &__social {
-//     height: 60px;
-//     width: 60px;
-//     background: var(--primary);
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     border-radius: 50%;
-//     svg {
-//       height: 30px;
-//       width: auto;
-//     }
-//   }
-// }
 
 @media (max-width: 1440px) {
   .header {

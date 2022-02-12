@@ -3,7 +3,7 @@
 		{
 			"id" : 100,
 			"text": "101 красная роза",
-			"src" : "../../img/100.png",
+			"src" : "../../img/card/100.png",
 			"price": 2280,
 			"oldPrice": 2800,
 			"sale": 19,

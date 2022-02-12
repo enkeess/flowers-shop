@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Footer } from '../footer/footer';
 import { Header } from '../header/header';
+import { Map } from '../map/map';
 import { LayoutProps } from './layout.props';
 import './layout.scss';
 
@@ -14,6 +15,10 @@ export const Layout = ({children}:LayoutProps):JSX.Element => {
 			<div className={"layout__body"}>
 				{children}
 			</div>	
+
+			{/* <div>
+				<Map/>
+			</div> */}
 
 			<div className={"layout__footer"}>
 				<Footer/>

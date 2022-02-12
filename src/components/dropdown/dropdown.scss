@@ -35,22 +35,24 @@
     }
   }
 
+  &__list {
+    margin-top: 30px;
+    row-gap: 10px;
+    display: none;
+    transition: all 0.5s;
+
+    &_active {
+      display: grid;
+    }
+  }
+
   &_f .dropdown {
     &__btn {
       display: none;
     }
-  }
-
-  //   &__item {
-  //     font-size: 16px;
-  //     line-height: 18px;
-  //     color: var(--white);
-  //   }
-
-  &__list {
-    margin-top: 30px;
-    display: grid;
-    row-gap: 10px;
+    &__list {
+      display: grid;
+    }
   }
 }
 
@@ -72,6 +74,12 @@
       }
       &__btn {
         display: block;
+      }
+      &__list {
+        display: none;
+        &_active {
+          display: grid;
+        }
       }
     }
   }

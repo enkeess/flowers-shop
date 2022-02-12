@@ -27,7 +27,8 @@
   &__page {
     display: grid;
     grid-template-rows: 1fr;
-    row-gap: 15px;
+    row-gap: 16px;
+    padding: 0 8px;
     &_db {
       grid-template-rows: 1fr 1fr;
     }
@@ -36,7 +37,7 @@
   &__row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 15px;
+    column-gap: 16px;
   }
 
   &__content {

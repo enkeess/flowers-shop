@@ -10,11 +10,11 @@ export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.
 	const content = Array.isArray(children) ? children : [children];
 	const [active, setActive] = useState<boolean>(false);
 
-	useEffect(() => {
-		if(type == "footer") {
-			setActive(true);
-		}
-	}, []);
+	// useEffect(() => {
+	// 	if(type == "footer") {
+	// 		setActive(true);
+	// 	}
+	// }, []);
 
 	const toggleActive = () => {
 		setActive(!active);
@@ -40,8 +40,10 @@ export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.
 				</button>
 			</div>
 			
-			{active && 
-				<ul className={cn('dropdown__list')}> 
+			{/* {active &&  */}
+				<ul className={cn('dropdown__list', {
+						["dropdown__list_active"]:active,
+					})}> 
 					{content.map(item => {
 						return(
 							<li className='dropdown__item'>
@@ -51,7 +53,7 @@ export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.
 					})}
 				</ul>
 			
-			}
+			{/* } */}
 			
 
 			

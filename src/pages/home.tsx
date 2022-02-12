@@ -1,5 +1,5 @@
 import { Card, Carousel, Promo } from '../components';
-import data from '../components/app/data.json';
+import data from '../app/data.json';
 
 export const HomePage = () => {
 
@@ -9,7 +9,6 @@ export const HomePage = () => {
 		);
 	});
 
-	
 
 	interface TestProps {
 		id:number;
