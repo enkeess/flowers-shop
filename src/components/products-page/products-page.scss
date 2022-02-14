@@ -1,0 +1,27 @@
+.products-page {
+  display: grid;
+  width: 100%;
+  gap: 15px;
+  grid-template-columns: 340px 1fr;
+  grid-template-rows: 40px 1fr auto;
+  grid-template-areas:
+    "side top"
+    "side products"
+    "recomendation recomendation";
+
+  &__products {
+    grid-area: products;
+  }
+
+  &__side {
+    grid-area: side;
+  }
+
+  &__top {
+    grid-area: top;
+  }
+
+  &__recomendation {
+    grid-area: recomendation;
+  }
+}

@@ -119,7 +119,6 @@ export const Header = () => {
 						</div>
 					</div>
 
-					
 					<div >
 						<div className={'header__nav'} >  
 							<div className={'header__logo'} >  
@@ -184,10 +183,10 @@ export const Header = () => {
 									</select>	
 								</div>
 
-								<a className={'header__block-item'}>
+								<Link to="/delivery" className={'header__block-item'}>
 									<Icons.DeliveryIcon/>
 									Доставка и оплата
-								</a>
+								</Link>
 
 								<div className={'header__block-item'}>
 									<span>Язык </span> 
@@ -209,8 +208,10 @@ export const Header = () => {
 							<Icons.MenuIcon onClick={toggleShowSide}/>
 						</div>
 
-						<div  className={'header__logo'}>  
-							<Icons.LogoIcon/>
+						<div  className={'header__logo'}> 
+							<Link to="/">
+								<Icons.LogoIcon/>
+							</Link> 
 						</div>
 						
 						<div className={'header__icons'}>
@@ -218,17 +219,14 @@ export const Header = () => {
 								<Icons.SearchIcon/>
 							</div>
 							
-							<div >
-								<Icons.BusketIcon/>
+							<div>
+								<Link to="/busket">
+									<Icons.BusketIcon/>
+								</Link>
 							</div>
 						</div>
-						
 					</div>
-						
 				</header>
-
-
-			
 
 				<Side 
 					title={"Меню"} 
@@ -245,29 +243,20 @@ export const Header = () => {
 						{routes.map(route => {
 							return(
 								<li className={'side__list-item'}>
-									<a href={route.link}>
+									<Link to={route.link}>
 										{route.text}
-									</a>
+									</Link>
 								</li>
 							);
 						})}
 					</ul>
-
 					<Socials/> 
-					
 				</Side>
-				
-
-			
-
 			</>
 		);
 	};
 
 	return (
 		<>{!withSide ? renderHeader() : renderSmallHeader()}</>	
-		// <>{renderHeader()}</>
 	);
-
-	
 };

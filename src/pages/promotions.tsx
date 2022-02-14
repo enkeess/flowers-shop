@@ -1,9 +1,13 @@
-import { Layout } from '../components';
+import { Layout, ProductsPage, Title } from '../components';
 
 export const PromotionsPage = () => {
+
+	
+
 	return(
 		<Layout>
-			Promotions Page
+			<Title> Акции </Title>
+			<ProductsPage/>
 		</Layout>
 	);
 };

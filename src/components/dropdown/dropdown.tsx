@@ -5,16 +5,14 @@ import cn from 'classnames';
 import './dropdown.scss';
 import { useEffect, useState } from 'react';
 
-export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.Element => {
+export const Dropdown = ({title, children, type = "default", isActive=false}:DropdownProps):JSX.Element => {
 	
 	const content = Array.isArray(children) ? children : [children];
 	const [active, setActive] = useState<boolean>(false);
 
-	// useEffect(() => {
-	// 	if(type == "footer") {
-	// 		setActive(true);
-	// 	}
-	// }, []);
+	useEffect(() => {
+		setActive(isActive);
+	}, []);
 
 	const toggleActive = () => {
 		setActive(!active);
@@ -22,7 +20,8 @@ export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.
 
 	return(
 		<div className={cn('dropdown', {
-			["dropdown_f"] : type == "footer"
+			["dropdown_f"] : type == "footer",
+			["dropdown_c"] : type == "category",
 		})}>
 			<div className='dropdown__top'> 
 				<div className={cn('dropdown__title', 'dropdown__title_bold')}> 
@@ -31,8 +30,7 @@ export const Dropdown = ({title, children, type = "default"}:DropdownProps):JSX.
 
 				<button 
 					className={cn('dropdown__btn', {
-						["dropdown__btn_active"]:active,
-						
+						["dropdown__btn_active"]:active,	
 					})} 
 					onClick={toggleActive}
 				> 

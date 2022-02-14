@@ -123,19 +123,19 @@
   .carousel {
     &__title {
       margin-bottom: 30px;
-      font-size: 40px;
+      font-size: 30px;
     }
 
     &__row {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    // &__indicators {
-    // 	display: flex;
-    // }
+    &__indicators {
+      display: flex;
+    }
 
-    // &__btns {
-    // 	display: none;
-    // }
+    &__btns {
+      display: none;
+    }
   }
 }

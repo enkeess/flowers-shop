@@ -1,0 +1,23 @@
+.subcategory {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  &__done {
+    fill: none;
+  }
+  &__text {
+    font-style: 16px;
+    color: var(--primary);
+    font-weight: 300;
+    line-height: 38px;
+  }
+  &_active .subcategory {
+    &__done {
+      fill: var(--primary);
+    }
+    &__text {
+      font-weight: 700;
+    }
+  }
+}

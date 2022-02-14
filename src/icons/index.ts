@@ -20,6 +20,7 @@ import {ReactComponent as CloseIcon} from './close-icon.svg';
 import {ReactComponent as GiftboxIcon} from './giftbox-icon.svg';
 import {ReactComponent as PhotosIcon} from './photos-icon.svg';
 import {ReactComponent as VideoIcon} from './video-icon.svg';
+import {ReactComponent as DoneIcon} from './done-icon.svg';
 
 
 export {
@@ -44,5 +45,6 @@ export {
 	CloseIcon,
 	GiftboxIcon,
 	PhotosIcon,
-	VideoIcon
+	VideoIcon,
+	DoneIcon
 };

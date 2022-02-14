@@ -1,24 +1,25 @@
 .layout {
-	display: grid;
-	grid-template-areas:
-		"header header header"
-		". body ."
-		"footer footer footer";
-	grid-template-rows: auto 1fr auto;
-	grid-template-columns: auto 1fr auto;
-	min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    ". body ."
+    "footer footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
+  min-height: 100vh;
 
-	&__header {
-		grid-area: header;
-	}
+  &__header {
+    grid-area: header;
+  }
 
-	&__body {
-		grid-area: body;
-		max-width: var(--container-width);
-		margin: 0 auto;
-	}
+  &__body {
+    grid-area: body;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    width: 100%;
+  }
 
-	&__footer {
-		grid-area: footer;
-	}
+  &__footer {
+    grid-area: footer;
+  }
 }

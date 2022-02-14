@@ -1,19 +1,18 @@
 .dropdown {
   padding: 10px;
-  //   border: solid 1px var(--primary);
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
   }
+
   &__title {
     display: inline-block;
     &_bold {
       font-size: 18px;
       line-height: 18px;
       font-weight: 700;
-      color: var(--white);
     }
   }
 
@@ -54,6 +53,27 @@
       display: grid;
     }
   }
+
+  &_c .dropdown {
+    &__title {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 18px;
+    }
+    &__btn {
+      svg {
+        fill: var(--dark-gray);
+        width: auto;
+        height: 15px;
+        transform: rotateZ(90deg);
+      }
+      &_active {
+        svg {
+          transform: rotateZ(270deg);
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1200px) {
@@ -74,9 +94,16 @@
       }
       &__btn {
         display: block;
+        svg {
+          fill: var(--white);
+          height: 14px;
+          width: auto;
+        }
       }
       &__list {
+        margin-top: 10px;
         display: none;
+
         &_active {
           display: grid;
         }
