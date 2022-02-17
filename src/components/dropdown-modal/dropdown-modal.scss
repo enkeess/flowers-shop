@@ -1,0 +1,90 @@
+.dropdown-modal {
+  position: relative;
+  transition: all 0.3s;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  &__title {
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--primary);
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: none;
+    border: none;
+
+    svg {
+      transition: all 0.3s;
+      fill: var(--dark-gray);
+    }
+    &_active {
+      svg {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+  &__active-choose {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 18px;
+    text-decoration-line: underline;
+  }
+
+  &__dropdown {
+    display: none;
+    border: solid 1px var(--primary);
+    background: var(--white);
+    width: 240px;
+    z-index: 100;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    &-item {
+      padding: 7.5px 15px;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 300;
+      transition: all 0.3s;
+      &:hover {
+        background: var(--primary-hover);
+        color: var(--white);
+        font-weight: 700;
+      }
+      &_active {
+        background: var(--primary);
+        color: var(--white);
+        font-weight: 700;
+      }
+    }
+    &_active {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 15px);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .dropdown-modal {
+    &__title,
+    &__active-choose {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    &__top {
+      gap: 10px;
+    }
+  }
+}

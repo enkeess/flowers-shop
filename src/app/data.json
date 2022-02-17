@@ -9,7 +9,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		},
@@ -22,7 +22,7 @@
 			"sale": 10,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "pink",
 			"occasions" : []
 		},
@@ -36,7 +36,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "any",
 			"occasions" : []
 		},
@@ -50,7 +50,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		},
@@ -63,7 +63,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		},
@@ -76,7 +76,7 @@
 			"sale": 10,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "pink",
 			"occasions" : []
 		},
@@ -90,7 +90,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "any",
 			"occasions" : []
 		},
@@ -104,7 +104,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		},
@@ -117,7 +117,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		},
@@ -130,7 +130,7 @@
 			"sale": 10,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "pink",
 			"occasions" : []
 		},
@@ -144,7 +144,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "any",
 			"occasions" : []
 		},
@@ -158,7 +158,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		},
@@ -172,7 +172,7 @@
 			"sale": 19,
 			"isTop": true,
 			"categories": [],
-			"forI" : [],
+			"toWhom" : [],
 			"color": "red",
 			"occasions" : []
 		}
@@ -225,6 +225,45 @@
 			]
 		}
 
+	],
+
+	"toWhom" : [
+		"Бабушке",
+		"Коллеге",
+		"Начальнице",
+		"Ребенку",
+		"Бизнес партнеру",
+		"Маме",
+		"Папе",
+		"Учителю",
+		"Девушке",
+		"Начальнику",
+		"Подруге"
+	],
+
+	"occasion" : [
+		"8 марта", 
+		"Первое свидание",
+		"Свадьба",
+		"День рождения",
+		"1-е сентября",
+		"День влюбленных"
+	],
+
+	"colors": [
+		"Белые букеты",
+		"Розовые букеты",
+		"Голубые букеты",
+		"Красные букеты",
+		"Жетлые букеты",
+		"Синие/голубые букеты"
+	],
+
+	"sortType": [
+		"По популярности",
+		"По возрастанию",
+		"По убыванию",
+		"По скидке"
 	]
 }
 

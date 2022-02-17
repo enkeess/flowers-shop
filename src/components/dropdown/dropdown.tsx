@@ -37,8 +37,7 @@ export const Dropdown = ({title, children, type = "default", isActive=false}:Dro
 					<ArrowRightIcon/> 
 				</button>
 			</div>
-			
-			{/* {active &&  */}
+		
 				<ul className={cn('dropdown__list', {
 						["dropdown__list_active"]:active,
 					})}> 

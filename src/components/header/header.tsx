@@ -258,5 +258,5 @@ export const Header = () => {
 
 	return (
 		<>{!withSide ? renderHeader() : renderSmallHeader()}</>	
-	);
+	); 
 };

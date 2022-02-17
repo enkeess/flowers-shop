@@ -13,6 +13,7 @@ import {ReactComponent as SearchIcon} from './search-icon.svg';
 import {ReactComponent as DeliveryIcon} from './delivery-icon.svg';
 import {ReactComponent as ContactsIcon} from './contacts-icon.svg';
 import {ReactComponent as BusketIcon} from './busket-icon.svg';
+import {ReactComponent as ArrowIcon} from './arrow-icon.svg';
 import {ReactComponent as ArrowLeftIcon} from './arrow-left-icon.svg';
 import {ReactComponent as ArrowRightIcon} from './arrow-right-icon.svg';
 import {ReactComponent as MenuIcon} from './menu-icon.svg';
@@ -39,6 +40,7 @@ export {
 	StarIcon,
 	LogoIcon,
 	LogoFIcon,
+	ArrowIcon,
 	ArrowLeftIcon,
 	ArrowRightIcon,
 	MenuIcon,

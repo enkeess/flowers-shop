@@ -5,9 +5,16 @@
   grid-template-columns: 340px 1fr;
   grid-template-rows: 40px 1fr auto;
   grid-template-areas:
-    "side top"
-    "side products"
-    "recomendation recomendation";
+    "side select sort"
+    "side products products"
+    "recomendation recomendation recomendation";
+
+  &__sort {
+    grid-area: sort;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
   &__products {
     grid-area: products;
@@ -17,11 +24,24 @@
     grid-area: side;
   }
 
-  &__top {
-    grid-area: top;
+  &__select {
+    grid-area: select;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
   }
 
   &__recomendation {
     grid-area: recomendation;
+  }
+}
+
+@media (max-width: 1200px) {
+  .products-page {
+    grid-template-columns: 240px 1fr;
+    &__select {
+      gap: 10px;
+    }
   }
 }

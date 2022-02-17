@@ -2,7 +2,7 @@ import './card.scss';
 import src from'./img.png';
 import { StarIcon, HeartSmallIcon, HeartFillIcon, BusketIcon } from '../../icons';
 import { useState } from 'react';
-import { CardInterface } from '../../interfaces/card.interface';
+import { CardInterface } from '../../interfaces';
 import { Btn } from '../btn/btn';
 
 export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX.Element => {	

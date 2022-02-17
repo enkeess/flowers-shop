@@ -1,26 +1,3 @@
-export enum CategoriesEnum {
-	'roses',
-	'flowers in a box'
-}
-
-export enum ColorEnum {
-	'red',
-	'pink',
-	'blue',
-	'white',
-	'yellow'
-}
-
-export enum ForEnum {
-	'mother',
-	'friend'
-}
-
-export enum OccasionEnum {
-	'March 8',
-	'birthday'
-}
-
 export interface CardInterface {
 	id : number,
 	text: string,
@@ -29,8 +6,8 @@ export interface CardInterface {
 	oldPrice: number,
 	sale: number,
 	isTop: boolean,
-	categories: CategoriesEnum[],
-	forI : ForEnum[],
+	categories: string[],
+	toWhom : string[],
 	color: string,
-	occasions : OccasionEnum[]
+	occasions : string[]
 }

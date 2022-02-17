@@ -3,21 +3,34 @@ import './products-page.scss';
 import data from '../../app/data.json';
 import { Dropdown } from '../dropdown/dropdown';
 import { Subcategory } from '../subcategory/subcategory';
+import { DropdownModal } from '../dropdown-modal/dropdown-modal';
+
+// import data from '../../app/data.json';
 
 export const ProductsPage = () => {
 
+	const { 
+		cards, 
+		categories, 
+		toWhom, 
+		occasion,
+		colors,
+		sortType
+	} = data;
+
+	
 	interface CategoryInterface {
 		name: string;
 		subcategories: string[]; 
 	}
 
-	const categories:CategoryInterface[] = data.categories;
+	const cats:CategoryInterface[] = categories;
 
 	interface TestProps {
 		id:number;
 	}
 
-	console.log(categories);
+	
 	const getCatedories = () => {
 		return(
 			categories.map((category,i) => {
@@ -34,13 +47,21 @@ export const ProductsPage = () => {
 		);
 	};
 
-	const content = data.cards.map(card => <Card {...card}/>);
+	const content = cards.map(card => <Card {...card}/>);
 
 	return(
 		<div className='products-page'>
-			<div className='products-page__top'>
-				top
+			<div className='products-page__select'>
+				<DropdownModal title="Кому" content={toWhom}/>
+				<DropdownModal title="По цвету" content={colors}/>
+				<DropdownModal title="Повод" content={occasion}/>
+				
 			</div>
+
+			<div className='products-page__sort'>
+				<DropdownModal title="Сортировка" content={sortType}/>
+			</div>
+			
 
 			<div className='products-page__side'>
 				{getCatedories()}
