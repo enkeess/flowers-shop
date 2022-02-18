@@ -12,7 +12,7 @@ export const Gallery = ({children}:GalleryProps) => {
 	const step = 12;
 	const [range, setRange] = useState<{from:number, to:number}>({from:0, to:12});
 
-	console.log(`range.from : ${range.from} \n range.to : ${range.to}\n`)
+	
 	return(
 		<div className='gallery'>
 

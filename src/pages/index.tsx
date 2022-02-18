@@ -10,3 +10,4 @@ export * from './news';
 export * from './order';
 export * from './promotions';
 export * from './reviews';
+export * from './product';

@@ -2,11 +2,12 @@
   position: absolute;
   top: 0;
   left: -100vw;
+  max-width: 425px;
   width: 100vw;
   height: 100vh;
 
   overflow-y: scroll;
-  background: #e5e5e5;
+  background: var(--white);
   z-index: 10;
 
   transition: all 0.5s;
@@ -41,5 +42,16 @@
 
   &_active {
     left: 0;
+  }
+
+  &__body {
+    padding: 10px;
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--dark-gray);
   }
 }

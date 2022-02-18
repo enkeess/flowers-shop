@@ -7,3 +7,4 @@ export * from './promo/promo';
 export * from './gallery/gallery';
 export * from './products-page/products-page';
 export * from './title/title';
+export * from './product/product';

@@ -7,7 +7,8 @@ import {
 import { Layout } from '../components';
 import { 	AboutPage, BusketPage, ContactsPage, DeliveryPage, 
 			FavoritesPage, ForumPage, HomePage, NewsPage, 
-			OrderPage, PromotionsPage, ReviewsPage } from '../pages';
+			OrderPage, ProductPage, PromotionsPage, ReviewsPage } from '../pages';
+import { TestPage } from '../pages/test';
 
 import './app.scss';
 
@@ -25,8 +26,10 @@ const App = () => {
 					<Route path="/order" element={<OrderPage/>}/>
 					<Route path="/about" element={<AboutPage/>}/>
 					<Route path="/forum" element={<ForumPage/>}/>
+					<Route path="/product" element={<ProductPage/>}/>
 					<Route path="/favorites" element={<FavoritesPage/>}/>
 					<Route path="/reviews" element={<ReviewsPage/>}/>
+					<Route path="/test" element={<TestPage/>}/>
 					{/* <Route path="/info" element={<InfoP/>}/> */}
 					<Route path="/promotions" element={<PromotionsPage/>}/>
 					<Route path="/" element={<HomePage/>}/>

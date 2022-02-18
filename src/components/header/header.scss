@@ -1,11 +1,11 @@
 .header {
-  //   a {
-  //     color: var(--dark-gray);
-  //   }
   display: grid;
   grid-template-rows: 50px 150px;
 
-  &__upline {
+  &__link {
+    color: var(--dark-gray);
+  }
+  &__top {
     background: var(--dark-gray);
 
     &-container {
@@ -146,9 +146,6 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
-    a {
-      color: var(--dark-gray);
-    }
   }
 
   &__icons {
@@ -186,7 +183,7 @@
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .header {
     grid-template-rows: 50px 1fr;
 
@@ -234,7 +231,7 @@
         145px;
     }
 
-    &__upline-container {
+    &__top-container {
       grid-template-columns: 1fr 145px;
     }
 
@@ -267,7 +264,7 @@
 
 @media (max-width: 768px) {
   .header {
-    &__upline-container {
+    &__top-container {
       grid-template-columns: 1fr;
     }
     &__block {
@@ -287,13 +284,19 @@
       grid-template-rows: 1fr;
       grid-template-areas: initial;
     }
+
+    &__number {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
     &__menu {
       margin-left: 20px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       svg {
-        height: 35px;
+        height: 25px;
         width: auto;
       }
     }

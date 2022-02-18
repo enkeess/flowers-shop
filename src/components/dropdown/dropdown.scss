@@ -114,6 +114,13 @@
           display: grid;
         }
       }
+
+      &__item {
+        margin-left: 10px;
+        br {
+          display: none;
+        }
+      }
     }
   }
 }

@@ -1,11 +1,17 @@
 import './header.scss';
 import * as Icons from "../../icons";
+
 import { useEffect, useState } from 'react';
+
 import { Socials } from '../socials/socials';
+
 import {Btn} from '../btn/btn';
-import { Side } from '../side/side';
 
 import { Link } from 'react-router-dom';
+
+import { Side } from '../side/side';
+import { SideList } from '../side-list/side-list';
+import { SideListItem } from '../side-list-item/side-list';
 
 interface RouteInterface {
 	text:string;
@@ -37,7 +43,7 @@ export const Header = () => {
 	const getRoutes = () => {
 		return(routes.map((item) => {
 			return(
-				<Link to={item.link}>
+				<Link to={item.link} className="header__link">
 					{item.text}
 				</Link>
 				
@@ -69,8 +75,8 @@ export const Header = () => {
 	const renderHeader = () => {
 		return(
 			<header className={'header'}>
-					<div className={'header__upline'}>
-						<div className={'header__upline-container'}>
+					<div className={'header__top'}>
+						<div className={'header__top-container'}>
 							<div className={'header__block'}>
 								<div className={'header__block-item'}> 
 									Валюта
@@ -172,8 +178,8 @@ export const Header = () => {
 		return(
 			<>
 				<header className={'header'}>
-					<div className={'header__upline'}>
-						<div className={'header__upline-container'}>
+					<div className={'header__top'}>
+						<div className={'header__top-container'}>
 							<div className={'header__block'}>
 								<div className={'header__block-item'}> 
 									<span>Валюта</span>   
@@ -233,23 +239,27 @@ export const Header = () => {
 					showSide={showSide}  
 					toggleShowSide={toggleShowSide}	
 				>
-					<ul className={'side__list'}>
-						<div>
-							<span>+38 (067) 829 30 30</span>
-							<Btn>
-								<a href='tel:+380678293030'> Позвонить</a>
-							</Btn>
-						</div>
+				
+					<div className='header__number'>
+						<div>+38 (067) 829 30 30</div>
+						<Btn>
+							<a href='tel:+380678293030'> Позвонить</a>
+						</Btn>
+					</div>
+
+					<SideList>
 						{routes.map(route => {
 							return(
-								<li className={'side__list-item'}>
+								<SideListItem>
 									<Link to={route.link}>
 										{route.text}
 									</Link>
-								</li>
+								</SideListItem>
 							);
 						})}
-					</ul>
+					</SideList>
+						
+					
 					<Socials/> 
 				</Side>
 			</>
