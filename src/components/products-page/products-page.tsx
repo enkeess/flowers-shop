@@ -90,15 +90,16 @@ export const ProductsPage = () => {
 				</Btn>
 
 				<Btn type="outline">
-					Сортировка
+					<DropdownModal content={sortType} type="short"/>
 				</Btn>
 			</div>
 
 			<Side title='Фильтр' showSide={showSide} toggleShowSide={toggleShowSide}>
-				Side
+				
 				<Btn>
 					Сбросить фильтр
 				</Btn>
+
 				<DropdownModal title="Кому" content={toWhom}/>
 				<DropdownModal title="По цвету" content={colors}/>
 				<DropdownModal title="Повод" content={occasion}/>

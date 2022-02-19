@@ -1,5 +1,6 @@
 
 export interface DropdownModalProps {
 	content: string[];
-	title: string;
+	title?: string;
+	type? : "default" | "short"
 }

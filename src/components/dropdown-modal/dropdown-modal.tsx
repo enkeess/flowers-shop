@@ -6,7 +6,7 @@ import cn from 'classnames';
 
 import { useEffect, useRef, useState } from 'react';
 
-export const DropdownModal = ({title, content}:DropdownModalProps) => {
+export const DropdownModal = ({title, content, type = "default"}:DropdownModalProps) => {
 
 	const [active, setActive] = useState<boolean>(false);
 	const [activeChoose, setActiveShoose] = useState<string>(content[0]);
@@ -24,11 +24,16 @@ export const DropdownModal = ({title, content}:DropdownModalProps) => {
 	}, [active]);
 	
 	return(
-		<div className='dropdown-modal' >
+		<div className={cn('dropdown-modal', {
+			["dropdown-modal_short"] : type == "short",
+			["dropdown-modal_def"] : type == "default"
+		})}>
 			<div className='dropdown-modal__top'>
-				<div className='dropdown-modal__title'>
-					{title}
-				</div>
+				{title && 
+					<div className='dropdown-modal__title'>
+						{title}
+					</div>
+				}
 
 				<button 
 					className={cn('dropdown-modal__btn', {

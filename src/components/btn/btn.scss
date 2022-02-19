@@ -1,7 +1,7 @@
 .btn {
   position: relative;
 
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 
@@ -48,14 +48,16 @@
   }
 
   &_outline {
+    justify-content: initial;
     font-weight: 300;
     background: none;
     border: solid 1px var(--primary);
     color: var(--primary);
     box-shadow: none;
+    padding: 0;
+    &:active,
     &:hover {
-      background: var(--primary-hover);
-      color: white;
+      background: none;
     }
   }
 }
@@ -83,5 +85,12 @@
         transform: translateX(-1px);
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 14px;
+    padding: 10px 5px;
   }
 }
