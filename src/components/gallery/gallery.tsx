@@ -17,7 +17,14 @@ export const Gallery = ({children}:GalleryProps) => {
 		<div className='gallery'>
 
 			<div className='gallery__list'>
-				{content.slice(range.from, range.to).map(item => item)}
+				{
+					content.slice(range.from, range.to).map(item => {
+					return(
+						<div className='gallery__item'> 
+							{item} 
+						</div>
+					);})
+				}
 			</div>
 
 			<div className={"gallery__more"} onClick={() => {
@@ -46,7 +53,6 @@ export const Gallery = ({children}:GalleryProps) => {
 									})}
 
 									onClick={() => {
-
 										setRange({from: i * step, to: Math.min((i+1)* step, content.length)});
 									}}	
 								>

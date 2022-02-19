@@ -5,16 +5,16 @@
   grid-template-columns: 340px 1fr;
   grid-template-rows: 40px 1fr auto;
   grid-template-areas:
-    "side top "
-    "side products "
+    "categories top "
+    "categories products "
     "recomendation recomendation ";
 
   &__products {
     grid-area: products;
   }
 
-  &__side {
-    grid-area: side;
+  &__categories {
+    grid-area: categories;
   }
 
   &__top {
@@ -27,6 +27,10 @@
 
   &__recomendation {
     grid-area: recomendation;
+  }
+
+  &__btns {
+    display: none;
   }
 }
 
@@ -45,6 +49,28 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .products-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 45px 1fr auto;
+    grid-template-areas:
+      "btns"
+      "products "
+      "recomendation ";
+    &__top,
+    &__categories {
+      display: none;
+    }
+    &__btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-area: btns;
+      align-items: center;
+      gap: 15px;
     }
   }
 }

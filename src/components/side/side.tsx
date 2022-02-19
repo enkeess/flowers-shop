@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 import { SideProps } from './side.props';
@@ -9,6 +9,24 @@ import './side.scss';
 
 
 export const Side = ({title, children, showSide, toggleShowSide}:SideProps) => {
+
+	console.log(document.querySelector('body'));
+
+	useEffect(() => {
+		const body = document.querySelector('body');
+
+		if(showSide) {
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+			body && body.classList.add('over'); 
+		} else {
+			body && body.classList.remove('over'); 
+		}
+
+	}, [showSide]);
 
 	return(
 		<div className={cn('side', {

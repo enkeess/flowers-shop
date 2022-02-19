@@ -92,6 +92,20 @@
   }
 }
 
+@media (max-width: 768px) {
+  .dropdown {
+    &_c {
+      padding-left: 0;
+    }
+
+    &_c .dropdown {
+      &__list {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
 @media (max-width: 576px) {
   .dropdown {
     &_f .dropdown {

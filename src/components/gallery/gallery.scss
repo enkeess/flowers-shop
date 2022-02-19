@@ -2,7 +2,15 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
     gap: 15px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__more {
     margin-top: 50px;
@@ -69,6 +77,22 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .gallery {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
