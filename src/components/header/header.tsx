@@ -1,17 +1,18 @@
 import './header.scss';
 import * as Icons from "../../icons";
 
+import data from '../../app/data.json';
+
 import { useEffect, useState } from 'react';
 
 import { Socials } from '../socials/socials';
-
 import {Btn} from '../btn/btn';
-
 import { Link } from 'react-router-dom';
-
 import { Side } from '../side/side';
 import { SideList } from '../side-list/side-list';
 import { SideListItem } from '../side-list-item/side-list';
+import { IconCounter } from '../icon-counter/icon-counter';
+import { DropdownModal } from '../dropdown-modal/dropdown-modal';
 
 interface RouteInterface {
 	text:string;
@@ -164,8 +165,8 @@ export const Header = () => {
 							</div>
 
 							<div className={'header__icons'}>
-								<Icons.HeartIcon/>
-								<Icons.BusketIcon/>
+								<IconCounter icon={<Icons.HeartIcon/>}/>
+								<IconCounter icon={<Icons.BusketIcon/>}/>
 								<span>₽ 150 </span>
 							</div>
 						</div>
@@ -241,11 +242,16 @@ export const Header = () => {
 				>
 				
 					<div className='header__number'>
-						<div>+38 (067) 829 30 30</div>
+						<div className='header__number-tel'>+38 (067) 829 30 30</div>
 						<Btn>
 							<a href='tel:+380678293030'> Позвонить</a>
 						</Btn>
 					</div>
+
+
+					<DropdownModal title="Город" content={data.city}/>
+					{/* <DropdownModal title='Кому' content={data.toWhom}/> */}
+					{/* <DropdownModal title='Повод' content={data.occasion}/> */}
 
 					<SideList>
 						{routes.map(route => {
@@ -258,9 +264,11 @@ export const Header = () => {
 							);
 						})}
 					</SideList>
-						
+
+					<div className='header__socials'>
+						<Socials/>
+					</div>	
 					
-					<Socials/> 
 				</Side>
 			</>
 		);

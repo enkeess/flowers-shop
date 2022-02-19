@@ -51,18 +51,13 @@ export const ProductsPage = () => {
 
 	return(
 		<div className='products-page'>
-			<div className='products-page__select'>
+			<div className='products-page__top'>
 				<DropdownModal title="Кому" content={toWhom}/>
 				<DropdownModal title="По цвету" content={colors}/>
 				<DropdownModal title="Повод" content={occasion}/>
-				
-			</div>
-
-			<div className='products-page__sort'>
 				<DropdownModal title="Сортировка" content={sortType}/>
 			</div>
 			
-
 			<div className='products-page__side'>
 				{getCatedories()}
 			</div>

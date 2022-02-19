@@ -5,16 +5,9 @@
   grid-template-columns: 340px 1fr;
   grid-template-rows: 40px 1fr auto;
   grid-template-areas:
-    "side select sort"
-    "side products products"
-    "recomendation recomendation recomendation";
-
-  &__sort {
-    grid-area: sort;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
+    "side top "
+    "side products "
+    "recomendation recomendation ";
 
   &__products {
     grid-area: products;
@@ -24,11 +17,11 @@
     grid-area: side;
   }
 
-  &__select {
-    grid-area: select;
+  &__top {
+    grid-area: top;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 15px;
   }
 
@@ -42,6 +35,16 @@
     grid-template-columns: 240px 1fr;
     &__select {
       gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .products-page {
+    &__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
     }
   }
 }

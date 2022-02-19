@@ -1,5 +1,5 @@
 import './dropdown-modal.scss';
-import { ArrowIcon } from '../../icons';
+import { ArrowIcon, CloseIcon } from '../../icons';
 import { DropdownModalProps } from './dropdown-modal.props';
 
 import cn from 'classnames';
@@ -44,30 +44,46 @@ export const DropdownModal = ({title, content}:DropdownModalProps) => {
 				</button>
 			</div>
 			
+			
+			<div className={cn('dropdown-modal__overlay',{
+					['dropdown-modal__overlay_active']:active
+				})}>
+			
+				<div className={cn('dropdown-modal__dropdown',{
+					['dropdown-modal__dropdown_active']:active
+				})}>
 
-			<div className={cn('dropdown-modal__dropdown',{
-				['dropdown-modal__dropdown_active']:active
-			})}>
-				<ul className='dropdown-modal__dropdown-list'>
-					{content.map(item => {
-						return(
-							<li 
-								key={item} 
-								className={cn('dropdown-modal__dropdown-item', {
-									['dropdown-modal__dropdown-item_active']:activeChoose == item
-								})}
+					<div className='dropdown-modal__dropdown-top'>
+						<div className='dropdown-modal__dropdown-title'>
+							{title}
+						</div>
 
-								onClick={() => {
-									closeModal();
-									setActiveShoose(item);
-								}}
-							>
-								{item}
-							</li>
-						);
-					})}
-					
-				</ul>
+						<button className={'dropdown-modal__dropdown-close'} onClick={closeModal}>
+							<CloseIcon/>
+						</button>
+					</div>
+
+					<ul className='dropdown-modal__dropdown-list'>
+						{content.map(item => {
+							return(
+								<li 
+									key={item} 
+									className={cn('dropdown-modal__dropdown-item', {
+										['dropdown-modal__dropdown-item_active']:activeChoose == item
+									})}
+
+									onClick={() => {
+										closeModal();
+										setActiveShoose(item);
+									}}
+								>
+									{item}
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+
 			</div>
 		</div>
 	);
