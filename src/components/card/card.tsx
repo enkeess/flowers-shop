@@ -13,30 +13,15 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 	return(
 		<div key={id} className={"card"}>
 			
-			{/* <div className={"img__container"}>	
-				<img src={src} alt={text} className={"img"}/>
-				{sale && <div className={"card__sale"}> -{sale}%</div>}
-				{isTop && <div className={"card__top"}>TOP</div> }
-				<div 
-					className={"card__like"} 
-					onClick={() => setLike(!like)}
-				> 
-					{like ? <HeartFillIcon/> : <HeartSmallIcon/> }
-				</div>
-
-				
-			</div> */}
-
-				<ImageBlock/>
-			
-			
-				<div className={"card__rating"}>
-					<StarIcon/>
-					<StarIcon/>
-					<StarIcon/>
-					<StarIcon/>
-					<StarIcon/>
-				</div>
+			<ImageBlock src={src}/>
+		
+			<div className={"card__rating"}>
+				<StarIcon/>
+				<StarIcon/>
+				<StarIcon/>
+				<StarIcon/>
+				<StarIcon/>
+			</div>
 				
 			<div className={"card__info"}>
 				<div className={"card__name"}>
