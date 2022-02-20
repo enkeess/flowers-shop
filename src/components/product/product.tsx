@@ -1,4 +1,6 @@
 import { Btn } from '..';
+import { Counter } from '../counter/counter';
+import { Input } from '../input/input';
 import { ProductGallery } from '../product-gallery/product-gallery';
 import './product.scss';
 
@@ -38,7 +40,6 @@ export const Product = () => {
 			</div>
 
 			<div className='product__info'>
-				
 				<div className='product__title'>
 					{text}
 				</div>
@@ -51,7 +52,6 @@ export const Product = () => {
 						{oldprice}
 					</div>
 				</div>
-
 
 				<div className='product__info-block'>
 					<div className='product__info-title'>
@@ -74,7 +74,6 @@ export const Product = () => {
 					</div>
 				</div>
 
-
 				<div className='product__info-block'>
 					<div className='product__info-title'>
 						Материалы
@@ -96,14 +95,42 @@ export const Product = () => {
 				</div>
 
 				<div className='product__order'>
-					Counter 
-					
-					<Btn type='card'>	
+					<Counter/>
+					<Btn type='default'>	
 						В корзину
 					</Btn>
 				</div>
 
+				<div className='product__short'>
+
+					<div className='product__short-title'>
+						Быстрый заказ
+					</div>
+					
+					<form className='product__short-form'>
+						<Input/>
+						<Btn onSubmit={() => {console.log('click');}}>
+							Быстрый заказ
+						</Btn>
+					</form>
+				</div>
 				
+
+				<div className='product__block'>
+					
+					<div>
+						Доставка
+					</div>
+
+					<div>
+						Описание
+					</div>
+
+					<div>
+						Отзывы
+					</div>
+
+				</div>
 			</div>
 		</div>
 	);

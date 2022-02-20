@@ -1,0 +1,33 @@
+.counter {
+  width: 105px;
+  height: 63px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  border: solid 1px var(--primary);
+
+  &__num {
+    font-family: var(--euclid-circular-b);
+    font-size: 24px;
+    line-height: 18px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  &__btn {
+    padding: 0 10px;
+    height: 100%;
+    border: none;
+    background: none;
+    color: #bdbdbd;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .counter {
+    &__num {
+      font-size: 18px;
+    }
+  }
+}

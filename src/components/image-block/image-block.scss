@@ -91,13 +91,47 @@
   .image-block {
     height: 250px;
     &__img {
-      //   display: none;
       width: auto;
-      max-height: 240px;
+      height: 240px;
     }
   }
   .image-block_gallery {
     height: 100%;
+    img {
+      height: 70%;
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-block_gallery {
+    .image-block {
+      &__sale {
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+      }
+
+      &__like {
+        top: 30px;
+        right: 30px;
+
+        svg {
+          width: 30px;
+        }
+      }
+
+      &__top {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+      }
+    }
   }
 }
 
