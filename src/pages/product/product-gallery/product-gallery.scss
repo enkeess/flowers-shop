@@ -101,3 +101,27 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .product-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto;
+
+    grid-template-areas: "active active active" ". . .";
+
+    row-gap: 4px;
+    column-gap: 4.5px;
+
+    &__item {
+      width: 93.5px;
+      height: 93.5px;
+      img {
+        height: 75px;
+      }
+      &_active {
+        height: 290px;
+        width: 290px;
+      }
+    }
+  }
+}

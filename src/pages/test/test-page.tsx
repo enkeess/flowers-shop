@@ -1,7 +1,7 @@
-import { DropdownModal } from '../components/dropdown-modal/dropdown-modal';
-import { ImageBlock } from '../components/image-block/image-block';
-import data from '../app/data.json';
-import { Side } from '../components/side/side';
+import { DropdownModal } from '../../components/dropdown-modal/dropdown-modal';
+import { ImageBlock } from '../../components/image-block/image-block';
+import data from '../../app/data.json';
+import { Side } from '../../components/side/side';
 export const TestPage = ( ) => {
 	return(
 		<div style={{background: "#e5e5e5"}}>TestPage

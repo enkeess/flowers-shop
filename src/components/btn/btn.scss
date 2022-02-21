@@ -60,6 +60,12 @@
       background: none;
     }
   }
+
+  &_in-form {
+    svg {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -92,5 +98,22 @@
   .btn {
     font-size: 14px;
     padding: 10px 5px;
+  }
+}
+
+@media (max-width: 425px) {
+  .btn {
+    &_in-form {
+      span {
+        display: none;
+      }
+
+      svg {
+        display: block;
+      }
+
+      background-image: none;
+      padding: 19px 28px;
+    }
   }
 }

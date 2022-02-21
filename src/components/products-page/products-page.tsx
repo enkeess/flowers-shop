@@ -6,7 +6,6 @@ import { Subcategory } from '../subcategory/subcategory';
 import { DropdownModal } from '../dropdown-modal/dropdown-modal';
 import { Side } from '../side/side';
 import { useState } from 'react';
-import { List } from '../list/list';
 import { SideListItem } from '../side-list-item/side-list';
 import { SideList } from '../side-list/side-list';
 

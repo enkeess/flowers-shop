@@ -1,4 +1,4 @@
-import { Layout, ProductsPage, Title } from '../components';
+import { Layout, ProductsPage, Title } from '../../components';
 
 export const PromotionsPage = () => {
 

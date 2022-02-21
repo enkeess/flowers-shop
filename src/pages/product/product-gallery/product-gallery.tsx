@@ -1,4 +1,5 @@
 import { ProductGalleryProps } from './product-gallery.props';
+import { ImageBlock } from '../../../components';
 
 import src1 from './images/img1.png';
 import src2 from './images/img2.png';
@@ -8,7 +9,7 @@ import cn from 'classnames';
 
 import './product-gallery.scss';
 import { useState } from 'react';
-import { ImageBlock } from '../image-block/image-block';
+
 
 export const ProductGallery = ({id, isTop} :ProductGalleryProps) => {
 

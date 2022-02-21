@@ -1,5 +1,5 @@
-import { Card, Carousel, Layout, Promo } from '../components';
-import data from '../app/data.json';
+import { Card, Carousel, Layout, Promo } from '../../components';
+import data from '../../app/data.json';
 
 export const HomePage = () => {
 

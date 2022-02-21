@@ -22,6 +22,7 @@ import {ReactComponent as GiftboxIcon} from './giftbox-icon.svg';
 import {ReactComponent as PhotosIcon} from './photos-icon.svg';
 import {ReactComponent as VideoIcon} from './video-icon.svg';
 import {ReactComponent as DoneIcon} from './done-icon.svg';
+import {ReactComponent as SendIcon} from './send-icon.svg';
 
 
 export {
@@ -48,5 +49,6 @@ export {
 	GiftboxIcon,
 	PhotosIcon,
 	VideoIcon,
-	DoneIcon
+	DoneIcon,
+	SendIcon
 };
