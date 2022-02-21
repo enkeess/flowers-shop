@@ -23,6 +23,7 @@ import {ReactComponent as PhotosIcon} from './photos-icon.svg';
 import {ReactComponent as VideoIcon} from './video-icon.svg';
 import {ReactComponent as DoneIcon} from './done-icon.svg';
 import {ReactComponent as SendIcon} from './send-icon.svg';
+import {ReactComponent as TrashIcon} from './trash-icon.svg';
 
 
 export {
@@ -50,5 +51,6 @@ export {
 	PhotosIcon,
 	VideoIcon,
 	DoneIcon,
-	SendIcon
+	SendIcon,
+	TrashIcon
 };

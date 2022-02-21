@@ -1,15 +1,20 @@
 import { Btn, Card, Gallery } from '..';
 import './products-page.scss';
-import data from '../../app/data.json';
-import { Dropdown } from '../dropdown/dropdown';
-import { Subcategory } from '../subcategory/subcategory';
-import { DropdownModal } from '../dropdown-modal/dropdown-modal';
-import { Side } from '../side/side';
-import { useState } from 'react';
-import { SideListItem } from '../side-list-item/side-list';
-import { SideList } from '../side-list/side-list';
 
-// import data from '../../app/data.json';
+import data from '../../app/data.json';
+
+import { Dropdown } from '../dropdown/dropdown';
+import { DropdownModal } from '../dropdown-modal/dropdown-modal';
+
+import { Subcategory } from '../subcategory/subcategory';
+
+
+import { Side } from '../side/side';
+import { SideList } from '../side-list/side-list';
+import { SideListItem } from '../side-list-item/side-list';
+
+
+import { useState } from 'react';
 
 export const ProductsPage = () => {
 
