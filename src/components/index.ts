@@ -10,3 +10,4 @@ export * from './counter/counter';
 export * from './input/input';
 export * from './image-block/image-block';
 export * from './products-page/products-page';
+export * from './outline-block/outline-block';

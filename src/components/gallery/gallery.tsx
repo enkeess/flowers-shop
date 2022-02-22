@@ -12,6 +12,13 @@ export const Gallery = ({children}:GalleryProps) => {
 	const step = 12;
 	const [range, setRange] = useState<{from:number, to:number}>({from:0, to:12});
 
+	const scroll = () => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+	};
 	
 	return(
 		<div className='gallery'>
@@ -54,6 +61,7 @@ export const Gallery = ({children}:GalleryProps) => {
 
 									onClick={() => {
 										setRange({from: i * step, to: Math.min((i+1)* step, content.length)});
+										scroll();
 									}}	
 								>
 									{i + 1}

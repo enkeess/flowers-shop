@@ -2,8 +2,17 @@
   display: grid;
   grid-template-rows: 50px 150px;
 
+  &_narrow {
+    display: none;
+  }
+
   &__link {
     color: var(--dark-gray);
+  }
+
+  &__logo img {
+    width: 125px;
+    height: auto;
   }
   &__top {
     background: var(--dark-gray);
@@ -172,7 +181,7 @@
 
 @media (max-width: 1440px) {
   .header {
-    &__logo svg {
+    &__logo img {
       width: 100px;
       height: auto;
     }
@@ -200,7 +209,7 @@
       gap: 15px;
     }
 
-    &__logo svg {
+    &__logo img {
       width: 90px;
       height: auto;
     }
@@ -265,6 +274,13 @@
 
 @media (max-width: 768px) {
   .header {
+    &_narrow {
+      display: grid;
+    }
+    &_wide {
+      display: none;
+    }
+
     &__top-container {
       grid-template-columns: 1fr;
     }
@@ -356,7 +372,7 @@
       }
     }
     &__logo {
-      svg {
+      img {
         height: 78px;
         width: auto;
       }

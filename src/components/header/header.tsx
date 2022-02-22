@@ -1,9 +1,8 @@
 import './header.scss';
-import * as Icons from "../../icons";
 
 import data from '../../app/data.json';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { Socials } from '../socials/socials';
 import {Btn} from '../btn/btn';
@@ -13,6 +12,9 @@ import { SideList } from '../side-list/side-list';
 import { SideListItem } from '../side-list-item/side-list';
 import { IconCounter } from '../icon-counter/icon-counter';
 import { DropdownModal } from '../dropdown-modal/dropdown-modal';
+import { BusketIcon, ContactsIcon, DeliveryIcon, HeartIcon, HeartSmallIcon, LogoIcon, MenuIcon, SearchIcon, UserIcon } from '../../icons';
+
+import logoSrc from '../../img/logo/logo.png';
 
 interface RouteInterface {
 	text:string;
@@ -52,125 +54,116 @@ export const Header = () => {
 		}));
 	};
 
-	const [withSide, setWithSide] = useState<boolean>(false);
 	const [showSide, setShowSide] = useState<boolean>(false);
 
 	const toggleShowSide = () => {
 		setShowSide(!showSide);
 	};
 
-	const updateWithSide = () => {
-		const width = window.innerWidth;
 
-		if(width <= 768 && !withSide) {
-			setWithSide(true);
-		} else if(width > 768 && width) {
-			setWithSide(false);
-		}
-	};
-
-	window.addEventListener('resize', updateWithSide);
-
-	useEffect(updateWithSide, []);
 
 	const renderHeader = () => {
 		return(
-			<header className={'header'}>
-					<div className={'header__top'}>
-						<div className={'header__top-container'}>
-							<div className={'header__block'}>
-								<div className={'header__block-item'}> 
-									Валюта
-									<select className={'header__select'} >            
-										<option value="rub">Руб</option>
-										<option value="usd">Usd</option>
-									</select>	
-								</div>
-								<div className={'header__block-item'}>
-									Язык 
-									<select className={'header__select'} >            
-										<option value="rus">Русский</option>
-										<option value="en">English</option>
-									</select>	
-								</div>
-								<div className={'header__block-item'}>
-									Город 
-									<select className={'header__select'} >            
-										<option value="москва">Москва</option>
-										<option value="new-york">New-York</option>
-									</select>	
-								</div>
-								
-								<Link to="/favorites" className={'header__block-item'}>
-									<Icons.HeartSmallIcon/>
-									Закладки
-								</Link>
-								
-								<Link to="/delivery" className={'header__block-item'}>
-									<Icons.DeliveryIcon/>
-									Доставка
-								</Link>
+			<header className={'header header_wide'}>
+				<div className={'header__top'}>
+					<div className={'header__top-container'}>
+						<div className={'header__block'}>
+							<div className={'header__block-item'}> 
+								Валюта
+								<select className={'header__select'} >            
+									<option value="rub">Руб</option>
+									<option value="usd">Usd</option>
+								</select>	
+							</div>
+							<div className={'header__block-item'}>
+								Язык 
+								<select className={'header__select'} >            
+									<option value="rus">Русский</option>
+									<option value="en">English</option>
+								</select>	
+							</div>
+							<div className={'header__block-item'}>
+								Город 
+								<select className={'header__select'} >            
+									<option value="москва">Москва</option>
+									<option value="new-york">New-York</option>
+								</select>	
+							</div>
+							
+							<Link to="/favorites" className={'header__block-item'}>
+								<HeartSmallIcon/>
+								Закладки
+							</Link>
+							
+							<Link to="/delivery" className={'header__block-item'}>
+								<DeliveryIcon/>
+								Доставка
+							</Link>
 
-								<Link to="/contacts" className={'header__block-item'}>
-									<Icons.ContactsIcon/>
-									Контакты
-								</Link>
+							<Link to="/contacts" className={'header__block-item'}>
+								<ContactsIcon/>
+								Контакты
+							</Link>
+						</div>
+						<div className={'header__auth'} >  
+							<UserIcon/>
+							<div>
+								Вход | Регистрация
 							</div>
-							<div className={'header__auth'} >  
-								<Icons.UserIcon/>
-								<div>
-									Вход | Регистрация
-								</div>
-								
-							</div>
+							
 						</div>
 					</div>
+				</div>
 
-					<div >
-						<div className={'header__nav'} >  
-							<div className={'header__logo'} >  
-								<Link to="/">
-									<Icons.LogoIcon/>
-								</Link>
-								
+				<div >
+					<div className={'header__nav'} >  
+						<div className={'header__logo'} >  
+							<Link to="/">
+								<img src={logoSrc} alt={"logo"}/>
+								{/* <LogoIcon/> */}
+							</Link>
+							
+						</div>
+						<div className={'header__find'} >  
+							
+							<div className={'header__filter'} >  
+								Поиск по категориям	
 							</div>
-							<div className={'header__find'} >  
-								
-								<div className={'header__filter'} >  
-									Поиск по категориям	
-								</div>
-								
-								<div className={'header__search'} >  
-									<input placeholder='Поиск по товарам'/>
-									<Icons.SearchIcon/>
-								</div>
-							</div>
-
-							<div className={'header__route'} >  
-								<div>
-									Каталог товаров
-								</div>
-
-								{getRoutes()}
-								
-							</div>
-
-							<div className={'header__contacts'} >  
-								<div className={'header__socials'} > 
-									<Socials/> 
-								</div>
-								<div className={'header__number'}>
-									<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
-								</div>
-							</div>
-
-							<div className={'header__icons'}>
-								<IconCounter icon={<Icons.HeartIcon/>}/>
-								<IconCounter icon={<Icons.BusketIcon/>}/>
-								<span>₽ 150 </span>
+							
+							<div className={'header__search'} >  
+								<input placeholder='Поиск по товарам'/>
+								<SearchIcon/>
 							</div>
 						</div>
+
+						<div className={'header__route'} >  
+							<div>
+								Каталог товаров
+							</div>
+
+							{getRoutes()}
+							
+						</div>
+
+						<div className={'header__contacts'} >  
+							<div className={'header__socials'} > 
+								<Socials/> 
+							</div>
+							<div className={'header__number'}>
+								<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
+							</div>
+						</div>
+
+						<div className={'header__icons'}>
+							<IconCounter icon={<HeartIcon/>}/>
+							<Link to="/busket">
+								<IconCounter icon={<BusketIcon/>}/>
+							</Link>
+							
+							<span>₽ 150 </span>
+						</div>
 					</div>
+				</div>
 			</header>
 		);
 	};
@@ -178,7 +171,7 @@ export const Header = () => {
 	const renderSmallHeader = () => {
 		return(
 			<>
-				<header className={'header'}>
+				<header className={'header header_narrow'}>
 					<div className={'header__top'}>
 						<div className={'header__top-container'}>
 							<div className={'header__block'}>
@@ -191,7 +184,7 @@ export const Header = () => {
 								</div>
 
 								<Link to="/delivery" className={'header__block-item'}>
-									<Icons.DeliveryIcon/>
+									<DeliveryIcon/>
 									Доставка и оплата
 								</Link>
 
@@ -208,27 +201,26 @@ export const Header = () => {
 						</div>
 					</div>
 
-					
-					
 					<div  className={'header__nav'}>  
 						<div className={'header__menu'}>
-							<Icons.MenuIcon onClick={toggleShowSide}/>
+							<MenuIcon onClick={toggleShowSide}/>
 						</div>
 
-						<div  className={'header__logo'}> 
+						<div  className={'header__logo'}  >  
 							<Link to="/">
-								<Icons.LogoIcon/>
+								{/* <LogoIcon/> */}
+								<img src={logoSrc} alt={"logo"}/>
 							</Link> 
 						</div>
 						
 						<div className={'header__icons'}>
 							<div  >  
-								<Icons.SearchIcon/>
+								<SearchIcon/>
 							</div>
 							
 							<div>
 								<Link to="/busket">
-									<Icons.BusketIcon/>
+									<BusketIcon/>
 								</Link>
 							</div>
 						</div>
@@ -248,10 +240,7 @@ export const Header = () => {
 						</Btn>
 					</div>
 
-
 					<DropdownModal title="Город" content={data.city}/>
-					{/* <DropdownModal title='Кому' content={data.toWhom}/> */}
-					{/* <DropdownModal title='Повод' content={data.occasion}/> */}
 
 					<SideList>
 						{routes.map(route => {
@@ -275,6 +264,9 @@ export const Header = () => {
 	};
 
 	return (
-		<>{!withSide ? renderHeader() : renderSmallHeader()}</>	
+		<>
+		{renderHeader()}
+		{renderSmallHeader()}
+		</>
 	); 
 };

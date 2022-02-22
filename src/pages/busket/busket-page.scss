@@ -1,3 +1,348 @@
 .busket {
   display: grid;
+  grid-template-columns: auto 1fr 330px auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    ". columns link ."
+    ". list total .";
+  column-gap: 28px;
+  row-gap: 10px;
+
+  &__columns,
+  &__item {
+    display: grid;
+    grid-template-columns: 115px 220px 100px 130px 75px auto;
+    gap: 40px;
+    width: 980px;
+  }
+  &__columns {
+    grid-area: columns;
+    align-items: center;
+
+    text-align: center;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+
+    color: #bdbdbd;
+
+    div {
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__link {
+    grid-area: link;
+  }
+  &__list {
+    grid-area: list;
+    display: grid;
+    gap: 15px;
+  }
+
+  &__item {
+    border: solid 1px var(--primary);
+    min-height: 156px;
+    align-items: center;
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 70%;
+        height: auto;
+      }
+    }
+    &-name,
+    &-sum {
+      font-size: 16px;
+      line-height: 18px;
+    }
+    &-counter,
+    &-prices,
+    &-sum {
+      margin: 0 auto;
+    }
+    &-price {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &-oldprice {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+
+      text-decoration-line: line-through;
+
+      color: #bdbdbd;
+    }
+
+    &-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      svg {
+        fill: var(--primary);
+        height: 19px;
+        width: auto;
+      }
+    }
+  }
+
+  &__total {
+    grid-area: total;
+    border: 1px solid var(--primary);
+    padding: 30px 50px;
+    display: grid;
+    align-items: center;
+
+    height: fit-content;
+    &-title {
+      font-weight: bold;
+      font-size: 36px;
+      color: var(--primary);
+    }
+
+    &-list {
+      display: grid;
+      //   gap: 30px;
+    }
+
+    &-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 10px 0;
+    }
+    &-caption {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 18px;
+      color: #bdbdbd;
+      &_big {
+        font-size: 24px;
+        line-height: 18px;
+        color: var(--dark-gray);
+      }
+    }
+    &-price {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 18px;
+      text-align: right;
+      color: #333333;
+      &_big {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 18px;
+        color: var(--dark-gray);
+      }
+    }
+    &-sum {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+
+      margin: 30px 0;
+    }
+  }
+}
+
+@media (max-width: 1420px) {
+  .busket {
+    grid-template-columns: auto max-content 330px auto;
+    &__columns,
+    &__item {
+      display: grid;
+      grid-template-columns: 115px 220px 90px 100px 75px auto;
+      gap: 20px;
+      width: max-content;
+    }
+
+    &__item {
+      &-icons {
+        padding: 0 20px;
+      }
+    }
+
+    &__total {
+      padding: 30px 50px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .busket {
+    grid-template-columns: auto max-content minmax(200px, 250px) auto;
+    gap: 15px;
+    &__columns,
+    &__item {
+      display: grid;
+      grid-template-columns: 100px 200px 90px 100px 70px 100px;
+      gap: 15px;
+      width: max-content;
+    }
+
+    &__item {
+      &-icons {
+        padding: 0 20px;
+      }
+    }
+
+    &__total {
+      padding: 15px 20px;
+      &-title {
+        font-size: 24px;
+      }
+      &-caption,
+      &-price {
+        font-size: 14px;
+        &_big {
+          font-size: 18px;
+        }
+      }
+
+      button {
+        padding: 20px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .busket {
+    gap: 0;
+    grid-template-columns: auto max-content 15px minmax(200px, 250px) auto;
+
+    grid-template-areas:
+      ". columns . link ."
+      ". list . total .";
+    &__columns,
+    &__item {
+      display: grid;
+      grid-template-columns: 90px 150px 100px 70px 80px;
+      gap: 7px;
+      width: max-content;
+    }
+
+    &__columns {
+      font-size: 14px;
+      div {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+    &__item {
+      min-height: 120px;
+      &-icons {
+        padding: 0 5px;
+      }
+
+      &-name,
+      &-price,
+      &-sum {
+        font-size: 13px;
+      }
+
+      &-oldprice {
+        font-size: 11px;
+      }
+      &-prices {
+        display: none;
+      }
+    }
+
+    &__total {
+      &-sum {
+        margin: 15px 0;
+      }
+      button {
+        padding: 15px 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .busket {
+    grid-template-columns: auto max-content auto;
+    grid-template-rows: 30px 20px 1fr auto;
+    grid-template-areas:
+      ". link ."
+      ". columns ."
+      ". list ."
+      ". total .";
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .busket {
+    grid-template-rows: 20px 1fr auto;
+    grid-template-areas:
+      ". link ."
+      ". list ."
+      ". total .";
+
+    &__columns {
+      display: none;
+    }
+
+    &__item {
+      grid-template-columns: 100px 1fr 100px;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "img name icons"
+        "img counter sum";
+
+      &-img {
+        grid-area: img;
+      }
+
+      &-name {
+        grid-area: name;
+      }
+
+      &-counter {
+        grid-area: counter;
+      }
+
+      &-sum {
+        grid-area: sum;
+        font-size: 16px;
+      }
+
+      &-counter {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+        width: 83px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .busket {
+    &__item {
+      padding: 5px 0;
+      grid-template-columns: 75px 1fr 75px;
+      &-name {
+        font-size: 12px;
+      }
+      &-icons {
+        gap: 6px;
+        height: 14px;
+        width: auto;
+      }
+    }
+  }
 }

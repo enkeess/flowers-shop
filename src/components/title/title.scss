@@ -4,3 +4,16 @@
   text-align: center;
   margin: 20px 0;
 }
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    margin: 10px 0;
+    font-size: 32px;
+  }
+}
