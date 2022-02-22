@@ -4,6 +4,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '../../icons';
 import { GalleryProps } from './gallery.props';
 import cn from 'classnames';
 import './gallery.scss';
+import { scrollToTop } from '../../helpers/scripts';
 
 export const Gallery = ({children}:GalleryProps) => {
 
@@ -11,14 +12,6 @@ export const Gallery = ({children}:GalleryProps) => {
 
 	const step = 12;
 	const [range, setRange] = useState<{from:number, to:number}>({from:0, to:12});
-
-	const scroll = () => {
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: 'smooth'
-		});
-	};
 	
 	return(
 		<div className='gallery'>
@@ -47,6 +40,7 @@ export const Gallery = ({children}:GalleryProps) => {
 						const newFrom = Math.max(0, range.from - step);
 						const newTo = Math.max(newFrom + 1, range.from);
 						setRange({from: newFrom, to: newTo});
+						scrollToTop();
 					}}
 				
 				> <ArrowLeftIcon/> </button>
@@ -61,7 +55,7 @@ export const Gallery = ({children}:GalleryProps) => {
 
 									onClick={() => {
 										setRange({from: i * step, to: Math.min((i+1)* step, content.length)});
-										scroll();
+										scrollToTop();
 									}}	
 								>
 									{i + 1}
@@ -77,6 +71,7 @@ export const Gallery = ({children}:GalleryProps) => {
 						const newFrom = Math.min(content.length - 1, range.to);
 						const newTo = Math.min(newFrom + step, content.length);
 						setRange({from: newFrom, to: newTo});
+						scrollToTop();
 					}}
 				> <ArrowRightIcon/> </button>
 			</div>

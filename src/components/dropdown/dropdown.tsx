@@ -1,4 +1,3 @@
-import {ReactComponent as Arrow} from './arrow.svg';
 import { DropdownProps } from './dropdown.props';
 import { ArrowRightIcon } from '../../icons';
 import cn from 'classnames';
@@ -23,7 +22,10 @@ export const Dropdown = ({title, children, type = "default", isActive=false}:Dro
 			["dropdown_f"] : type == "footer",
 			["dropdown_c"] : type == "category",
 		})}>
-			<div className='dropdown__top'> 
+			<div 
+				className='dropdown__top'
+				onClick={toggleActive}
+			> 
 				<div className={cn('dropdown__title', 'dropdown__title_bold')}> 
 					{title}
 				</div>

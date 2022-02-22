@@ -3,10 +3,6 @@ import './btn.scss';
 import cn from 'classnames';
 
 export const Btn = ({type = "default", children, ...props}:BtnProps) => {
-	console.log(type);
-
-
-
 	return(
 		<button className={cn('btn', {
 			["btn_fill"] : type == "fill",

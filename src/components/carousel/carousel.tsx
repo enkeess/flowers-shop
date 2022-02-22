@@ -5,6 +5,7 @@ import './carousel.scss';
 import cn from 'classnames';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../icons';
+import { Title } from '..';
 
 export const Carousel = ({title, content, loop = true, lines = 1}:CarouselProps) => {
 
@@ -147,9 +148,7 @@ export const Carousel = ({title, content, loop = true, lines = 1}:CarouselProps)
 
 	return(
 		<div className={"carousel"} data-name='carousel'>
-			<h2 className={"carousel__title"}>
-				{title}
-			</h2>
+			<Title>{title}</Title>
 
 			<div className={"carousel__btns"}>
 				<button className={"carousel__btn"}

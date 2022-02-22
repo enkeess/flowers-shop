@@ -12,7 +12,7 @@ import { SideList } from '../side-list/side-list';
 import { SideListItem } from '../side-list-item/side-list';
 import { IconCounter } from '../icon-counter/icon-counter';
 import { DropdownModal } from '../dropdown-modal/dropdown-modal';
-import { BusketIcon, ContactsIcon, DeliveryIcon, HeartIcon, HeartSmallIcon, LogoIcon, MenuIcon, SearchIcon, UserIcon } from '../../icons';
+import { BusketIcon, ContactsIcon, DeliveryIcon, HeartIcon, HeartSmallIcon,  MenuIcon, SearchIcon, UserIcon } from '../../icons';
 
 import logoSrc from '../../img/logo/logo.png';
 
@@ -150,7 +150,7 @@ export const Header = () => {
 								<Socials/> 
 							</div>
 							<div className={'header__number'}>
-								<a href='tel: 380678293030'> +38 (067) 829 30 30</a>
+								<a href='tel: +78005553535'> +7 (800) 555 35 35</a>
 							</div>
 						</div>
 
@@ -234,9 +234,10 @@ export const Header = () => {
 				>
 				
 					<div className='header__number'>
-						<div className='header__number-tel'>+38 (067) 829 30 30</div>
+						<div className='header__number-tel'>+7 (800) 555 35 35</div>
 						<Btn>
-							<a href='tel:+380678293030'> Позвонить</a>
+							<a href='tel:+78005553535'> Позвонить</a>
+							
 						</Btn>
 					</div>
 
@@ -245,7 +246,7 @@ export const Header = () => {
 					<SideList>
 						{routes.map(route => {
 							return(
-								<SideListItem>
+								<SideListItem key={route.text}>
 									<Link to={route.link}>
 										{route.text}
 									</Link>

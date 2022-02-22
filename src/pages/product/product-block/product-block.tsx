@@ -2,33 +2,36 @@ import { Btn, Counter, Input } from '../../../components';
 import { SendIcon } from '../../../icons';
 
 import { ProductGallery } from '../product-gallery/product-gallery';
+import { ProductBlockProps } from './product-block.props';
 import './product-block.scss';
 
-interface ProductInfo {
-	id : number,
-	text: string,
-	src : string,
-	price: number,
-	oldPrice: number,
-	sale: number,
-	isTop: boolean,
+// interface ProductInfo {
+// 	id : number,
+// 	text: string,
+// 	src : string,
+// 	price: number,
+// 	oldPrice: number,
+// 	sale: number,
+// 	isTop: boolean,
 
-	descr: string;
-	size: string;
-	materials: string[];
-	additions: string[];
+// 	descr: string;
+// 	size: string;
+// 	materials: string[];
+// 	additions: string[];
+// }
 
-}
+export const ProductBlock = ({id}:ProductBlockProps) => {
 
-export const ProductBlock = () => {
+	// const id = 101;
 
-	const id = 101;
+	console.log(`My id: ${id}`);
+
 	const text = "25 желтых тюльпанов";
 	const price = "1990.00 Руб";
 	const oldprice = "2500.00 Руб";
-	const sale = 20;
-	const isTop = true;
-	const descr = text;
+	// const sale = 20;
+	// const isTop = true;
+	// const descr = text;
 	const size = "50-60 см";
 	const materials = ["Декоративный флористический материал"];
 	const additions = ["Оформление"];

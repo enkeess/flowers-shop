@@ -12,13 +12,10 @@ export const HomePage = () => {
 	return(
 		<Layout>
 			<Promo/>
-
 			<Carousel title={'Акции'} content={content} lines={2}/>
 			<Carousel title={'Сезонные'} content={content} lines={2}/>
 			<Carousel title={'Подарки'} content={content} lines={2}/>
-			
 		</Layout>
-
 	);
 };
 

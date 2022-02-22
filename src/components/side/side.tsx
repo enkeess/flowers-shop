@@ -10,8 +10,6 @@ import './side.scss';
 
 export const Side = ({title, children, showSide, toggleShowSide}:SideProps) => {
 
-	console.log(document.querySelector('body'));
-
 	useEffect(() => {
 		const body = document.querySelector('body');
 

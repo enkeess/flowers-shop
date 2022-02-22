@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface ProductProps {
+export interface ProductBlockProps {
 	children?: ReactNode;
+	id:number;
 }

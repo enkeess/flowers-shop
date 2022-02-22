@@ -1,9 +1,14 @@
-import { Layout } from '../../components'
+import { Layout, Title } from '../../components';
+import './order-page.scss';
 
 export const OrderPage = () => {
 	return(
 		<Layout>
-			Order Page
+			<Title>Оформление заказа</Title>
+			<div className='order'>
+				Order Page
+			</div>
+			
 		</Layout>
 	);
 };
