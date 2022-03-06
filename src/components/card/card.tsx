@@ -16,9 +16,9 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 	
 	return(
 		<div key={id} className={"card"}>
-			<Link to={`/product/${id}`}>
-				<ImageBlock src={src}/>
 			
+
+			<ImageBlock src={src}/>
 				<div className={"card__rating"}>
 					<Rating/>
 				</div>
@@ -37,10 +37,12 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 					</div>
 				</div>
 				<div className={"card__btns"}>
-					<Btn type={"card"}>
-						<span>Заказать</span>
-						<BusketIcon/>
-					</Btn>
+					<Link to={`/product/${id}`}>
+						<Btn type={"card"}>
+							<span>Заказать</span>
+							<BusketIcon/>
+						</Btn>
+					</Link>
 					
 
 					<button className={"fast"}>
@@ -49,7 +51,10 @@ export const Card = ({id, text, price, oldPrice, sale, isTop}:CardInterface):JSX
 						</Link>
 					</button>
 				</div>
-			</Link>
+			
 		</div>
 	);
 };
+
+
+// export default widthRouter()

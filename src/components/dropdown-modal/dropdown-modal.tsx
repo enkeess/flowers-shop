@@ -35,7 +35,7 @@ export const DropdownModal = ({title, content, type = "default"}:DropdownModalPr
 					</div>
 				}
 
-				<button 
+				<div 
 					className={cn('dropdown-modal__btn', {
 						['dropdown-modal__btn_active']:active
 					})} 
@@ -46,7 +46,7 @@ export const DropdownModal = ({title, content, type = "default"}:DropdownModalPr
 					</span>
 
 					<ArrowIcon/>
-				</button>
+				</div>
 			</div>
 			
 			
@@ -63,9 +63,9 @@ export const DropdownModal = ({title, content, type = "default"}:DropdownModalPr
 							{title}
 						</div>
 
-						<button className={'dropdown-modal__dropdown-close'} onClick={closeModal}>
+						<div className={'dropdown-modal__dropdown-close'} onClick={closeModal}>
 							<CloseIcon/>
-						</button>
+						</div>
 					</div>
 
 					<ul className='dropdown-modal__dropdown-list'>

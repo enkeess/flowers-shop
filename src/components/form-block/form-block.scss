@@ -1,0 +1,42 @@
+.form-block {
+  border: 1px solid #e0e0e0;
+  margin-top: 20px;
+  position: relative;
+  max-width: 415px;
+
+  &__field {
+    padding: 20px 35px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  &__title {
+    position: absolute;
+    top: -10px;
+    left: 35px;
+    font-family: Euclid Circular B;
+    font-size: 14px;
+    line-height: 18px;
+    color: #bdbdbd;
+    z-index: 10;
+    padding: 0 25px;
+    background: var(--white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .from-block {
+    &__title {
+      top: -10px;
+      left: 25px;
+      font-size: 12px;
+      line-height: 14px;
+      z-index: 10;
+      padding: 0 20px;
+    }
+  }
+}

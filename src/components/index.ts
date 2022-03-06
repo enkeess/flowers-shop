@@ -11,3 +11,7 @@ export * from './input/input';
 export * from './image-block/image-block';
 export * from './products-page/products-page';
 export * from './outline-block/outline-block';
+export * from './form-block/form-block';
+export * from './checkbox/checkbox';
+export * from './summary/summary';
+export * from './summary-item/summary-item';

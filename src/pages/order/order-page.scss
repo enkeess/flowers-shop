@@ -1,3 +1,52 @@
 .order {
   display: grid;
+  &__form {
+    display: grid;
+    grid-template-columns: 480px 480px 1fr;
+    grid-template-rows: 435px 1fr;
+    grid-template-areas:
+      "first first summary"
+      "second third summary";
+    row-gap: 17px;
+    column-gap: 17px;
+  }
+}
+
+.first {
+  grid-area: first;
+}
+
+.second {
+  grid-area: second;
+}
+
+.third {
+  grid-area: third;
+}
+
+.form-step {
+  padding: 44px;
+  border: solid 1px var(--primary);
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 18px;
+  }
+  &__inputs {
+    margin-top: 35px;
+  }
+  &_wide {
+    .form-step__inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 62px;
+      row-gap: 35px;
+    }
+  }
+}
+
+.hide-block {
+  .checkbox {
+    margin-left: 35px;
+  }
 }

@@ -113,13 +113,13 @@ export const ProductBlock = ({id}:ProductBlockProps) => {
 						Быстрый заказ
 					</div>
 					
-					<form className='product-block__short-form'>
+					{/* <form className='product-block__short-form'>
 						<Input/>
 						<Btn type="in-form" onSubmit={() => {console.log('click');}}>
 							<span>Быстрый заказ</span>
 							<SendIcon/>
 						</Btn>
-					</form>
+					</form> */}
 				</div>
 				
 

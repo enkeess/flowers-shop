@@ -93,7 +93,7 @@ export const BusketPage = () => {
 					</div>
 
 					<Btn>
-						Оформить заказ
+						<Link to={"/order"}>Оформить заказ</Link>
 					</Btn>
 				</div>
 			</div>

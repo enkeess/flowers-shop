@@ -1,0 +1,36 @@
+.summary {
+  margin-left: 13px;
+  grid-area: summary;
+  border: 1px solid var(--primary);
+  padding: 30px 50px;
+  display: grid;
+  align-items: center;
+
+  height: fit-content;
+  &__title {
+    font-weight: bold;
+    font-size: 36px;
+    color: var(--primary);
+  }
+  &__list {
+    display: grid;
+  }
+  &__total {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 0;
+    font-weight: 300;
+    &-caption {
+      font-size: 24px;
+      line-height: 18px;
+      color: var(--dark-gray);
+    }
+    &-price {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 18px;
+      color: var(--dark-gray);
+      text-align: right;
+    }
+  }
+}
