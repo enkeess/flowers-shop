@@ -112,7 +112,7 @@ export const OrderPage = () => {
 
 						<SummaryItem 
 							caption='Доставка'
-							price={5558}
+							price={150}
 							dark={true}
 						/>
 

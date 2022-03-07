@@ -1,0 +1,56 @@
+@use "sass:math";
+
+// Media Breakpoints
+$breakpoint1440: 1449.98 + px;
+$breakpoint1024: 1023.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint576: 576.98 + px;
+$breakpoint480: 479.98 + px;
+$breakpoint425: 424.98 + px;
+$breakpoint375: 374.98 + px;
+
+//Colors
+$primaryColor: #956d84;
+$primaryColor-hover: rgb(160 85 126);
+$primaryColor-active: rgb(184, 71, 135);
+$whiteColor: #fff;
+$blackColor: #000;
+$grayColor: #828282;
+$grayColor2: #b0b9c0;
+$grayColor4: #bdbdbd;
+$darkGrayColor: #333;
+$lightGrayColor: rgba(0, 0, 0, 0.2);
+$textColor: #333333;
+
+//Container
+
+$containerWidth: 1420px;
+
+:root {
+  --museo-sans: "Museo Sans Cyrl";
+  --euclid-circular-b: "Euclid Circular B";
+  --primary: #956d84;
+  --primary-hover: rgb(160 85 126);
+  --primary-active: rgb(184, 71, 135);
+  --white: #fff;
+  --black: #000;
+  --gray: #828282;
+  --gray-2: #b0b9c0;
+  --dark-gray: #333;
+  --light-gray: rgba(0, 0, 0, 0.2);
+  --background: #e5e5e5;
+  --container-width: 1420px;
+}
+
+@media (max-width: 1420px) {
+  :root {
+    --container-width: calc(100vw - 20px);
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-width: calc(100vw - 20px);
+  }
+}
